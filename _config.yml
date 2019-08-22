@@ -4,6 +4,7 @@ style: light
 plugins:
   - jekyll-octicons
   - jekyll-github-metadata
+  - jekyll-seo-tag
   - jemoji
 
 permalink: /:year/:month/:day/:title/
@@ -58,3 +59,11 @@ topics:
   - name: AWS
     web_url: https://github.com/topics/aws
     image_url: https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png
+
+# SEO
+social:
+  name: Xavier Salazar
+  links:
+    - https://instagram.com/xsalazar3
+    - https://linkedin.com/in/xsalazar
+    - https://github.com/xsalazar
