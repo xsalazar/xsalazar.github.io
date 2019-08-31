@@ -22,9 +22,9 @@ projects:
   # sort_by options:
   #   - pushed
   #   - stars
-  limit: 9
+  limit: 6
   exclude:
-    archived: false
+    archived: true
     forks: true
     projects:
     # - repo-name
@@ -52,9 +52,9 @@ topics:
     web_url: https://github.com/topics/firebase
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png
 
-  - name: Material Design
-    web_url: https://github.com/topics/material-design
-    image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/material-design/material-design.png
+  - name: Terraform
+    web_url: https://github.com/topics/terraform
+    image_url: https://www.terraform.io/assets/images/og-image-8b3e4f7d.png
 
   - name: AWS
     web_url: https://github.com/topics/aws
