@@ -18,6 +18,8 @@ defaults:
       layout: "post"
 
 projects:
+  include_stars: false
+  include_forks: false
   sort_by: pushed
   # sort_by options:
   #   - pushed
