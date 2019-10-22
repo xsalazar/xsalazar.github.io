@@ -63,9 +63,15 @@ topics:
     image_url: https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png
 
 # SEO
+title: Xavier Salazar
+author: Xavier Salazar
+description: Software engineer from the Pacific Northwest. My mom's favorite programmer. 👨‍💻 My dog's favorite photographer. 📸🐶
+url: https://xsalazar.com
 social:
   name: Xavier Salazar
   links:
     - https://instagram.com/xsalazar3
     - https://linkedin.com/in/xsalazar
     - https://github.com/xsalazar
+webmaster_verifications:
+  google: GJibD157tlD6Fe2zteRZEYkH8pfFJSXJiFJikp5_A6w
