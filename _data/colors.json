@@ -516,7 +516,7 @@
         "url": "https://github.com/trending?l=Haxe"
     },
     "HCL": {
-        "color": null,
+        "color": "#aaaaaa",
         "url": "https://github.com/trending?l=HCL"
     },
     "HiveQL": {
