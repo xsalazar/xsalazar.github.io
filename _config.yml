@@ -15,6 +15,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      image: assets/image.png
 
 projects:
   include_stars: false
