@@ -11,9 +11,10 @@ permalink: /:year/:month/:day/:title/
 
 defaults:
   - scope:
-      path: ""
+      path: "" # an empty string here means all files in the project
+      type: "posts"
     values:
-      image: /assets/logo.png
+      layout: "post"
 
 projects:
   include_stars: false
@@ -61,10 +62,9 @@ topics:
     image_url: https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png
 
 # SEO
-title: Xavier Salazar
+title: Xavier Salazar - Software Engineer
 author: Xavier Salazar
-logo: /assets/logo.png
-description: Software engineer from the Pacific Northwest. My mom's favorite programmer. 👨‍💻 My dog's favorite photographer. 📸🐶
+description: Portland-based software engineer, working with Amazon Web Services, Terraform, and Angular.
 url: https://xsalazar.com
 social:
   name: Xavier Salazar
