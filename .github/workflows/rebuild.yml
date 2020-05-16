@@ -1,0 +1,13 @@
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build Page
+      uses: xsalazar/actions/pages-build@master
+      with:
+        username: ${{ GITHUB_ACTOR }}
+        api_token: ${{ secrets.API_TOKEN }}
