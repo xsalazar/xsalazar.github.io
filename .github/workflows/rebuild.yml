@@ -9,5 +9,5 @@ jobs:
     - name: Build Page
       uses: xsalazar/actions/pages-build@master
       with:
-        username: ${{ GITHUB_ACTOR }}
+        username: ${{ github.actor }}
         api_token: ${{ secrets.API_TOKEN }}
