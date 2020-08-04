@@ -17,3 +17,4 @@ jobs:
       uses: xsalazar/actions/downloader@master
       with:
         url: ${{ secrets.RESUME_URL }}
+        filename: 'resume.pdf'
