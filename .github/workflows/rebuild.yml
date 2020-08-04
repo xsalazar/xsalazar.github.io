@@ -1,6 +1,8 @@
 on:
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
+
 
 jobs:
   build:
@@ -11,3 +13,7 @@ jobs:
       with:
         username: ${{ github.actor }}
         api_token: ${{ secrets.API_TOKEN }}
+    - name: Download Resume
+      uses: xsalazar/actions/downloader@master
+      with:
+        url: ${{ secrets.RESUME_URL }}
