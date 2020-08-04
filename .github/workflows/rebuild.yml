@@ -10,13 +10,13 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-    - name: Build Page
-      uses: xsalazar/actions/pages-build@master
-      with:
-        username: ${{ github.actor }}
-        api_token: ${{ secrets.API_TOKEN }}
     - name: Download Resume
       uses: xsalazar/actions/downloader@master
       with:
         url: ${{ secrets.RESUME_URL }}
         filename: 'resume.pdf'
+    - name: Build Page
+      uses: xsalazar/actions/pages-build@master
+      with:
+        username: ${{ github.actor }}
+        api_token: ${{ secrets.API_TOKEN }}
