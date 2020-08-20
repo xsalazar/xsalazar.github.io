@@ -3,18 +3,10 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v2
-    - name: Download Resume
-      uses: xsalazar/actions/downloader@master
-      with:
-        url: ${{ secrets.RESUME_URL }}
-        filename: 'resume.pdf'
     - name: Build Page
       uses: xsalazar/actions/pages-build@master
       with:
