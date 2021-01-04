@@ -13,7 +13,7 @@ defaults:
   - scope:
       path: "" # an empty string here means all files in the project
     values:
-      image: assets/image.png
+      image: assets/social.png
 
 projects:
   include_stars: false
@@ -73,6 +73,8 @@ title: Xavier Salazar - Software Engineer
 author: Xavier Salazar
 description: Portland-based software engineer, working with Amazon Web Services, Terraform, Typescript, and Angular.
 url: https://xsalazar.com
+twitter:
+  card: summary
 social:
   name: Xavier Salazar
   links:
