@@ -14,4 +14,4 @@ jobs:
       uses: xsalazar/actions/pages-build@master
       with:
         username: ${{ github.actor }}
-        api_token: ${{ github.token }}
+        api_token: ${{ secrets.API_TOKEN }}
