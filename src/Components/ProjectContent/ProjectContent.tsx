@@ -18,8 +18,14 @@ export class ProjectContent extends Component {
     },
     {
       name: 'Lyman Art',
-      description: 'Andrew Lyman original artwork',
-      url: 'https://ablyman.com/',
+      description: 'Andrew Lyman original artwork, created as a static Jekyll website with image optimization',
+      url: 'https://ablyman.com',
+    },
+    {
+      name: 'Personal Website',
+      description:
+        'A website for showcasing my programming portfolio, including a number of projects, open source contributions, and contact information',
+      url: 'https://xsalazar.com',
     },
   ];
 
