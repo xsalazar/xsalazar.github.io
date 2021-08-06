@@ -21,7 +21,7 @@ import { ProjectContent } from './Components/ProjectContent/ProjectContent';
 import { ContributionContent } from './Components/ContributionContent/ContributionContent';
 import { InterestContent } from './Components/InterestContent/InterestContent';
 
-const drawerWidth = 420;
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -49,8 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-      paddingLeft: '40px',
-      paddingTop: '40px',
+      padding: '40px',
       width: drawerWidth,
     },
     content: {

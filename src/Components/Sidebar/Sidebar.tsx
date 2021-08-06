@@ -62,7 +62,7 @@ export class Sidebar extends Component<SidebarProps, SidebarState> {
         </Typography>
 
         {/* Bio */}
-        <Typography variant="body1" align="left" style={{ paddingBottom: '15px' }} component="pre">
+        <Typography variant="body1" align="left" style={{ paddingBottom: '15px' }}>
           {this.state.description}
         </Typography>
 
