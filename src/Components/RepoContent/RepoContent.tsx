@@ -32,8 +32,6 @@ export class RepoContent extends Component<RepoContentProps, RepoContentState> {
 
     const repositories = response.data.filter((r) => !r.fork).slice(0, 6);
 
-    console.log(repositories);
-
     this.setState({
       repositories: repositories,
       loading: false,
