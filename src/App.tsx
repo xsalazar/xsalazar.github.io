@@ -71,14 +71,16 @@ export default function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar} color="default" elevation={0}>
-        <Toolbar>
-          <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
-            <MenuIcon />
-          </IconButton>
-          <Typography>Xavier Salazar - Software Engineer</Typography>
-        </Toolbar>
-      </AppBar>
+      <Hidden mdUp>
+        <AppBar position="fixed" className={classes.appBar} color="default" elevation={0}>
+          <Toolbar>
+            <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
+              <MenuIcon />
+            </IconButton>
+            <Typography>Xavier Salazar - Software Engineer</Typography>
+          </Toolbar>
+        </AppBar>
+      </Hidden>
       <nav className={classes.drawer}>
         <Hidden mdUp>
           <Drawer
