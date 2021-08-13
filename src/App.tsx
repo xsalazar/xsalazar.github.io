@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     appBar: {
+      background: theme.palette.background.default,
       [theme.breakpoints.up('md')]: {
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
@@ -70,11 +71,12 @@ export default function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar} color="transparent" elevation={0}>
+      <AppBar position="fixed" className={classes.appBar} color="default" elevation={0}>
         <Toolbar>
           <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
             <MenuIcon />
           </IconButton>
+          <Typography>Xavier Salazar - Software Engineer</Typography>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
