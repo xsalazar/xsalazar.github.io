@@ -17,7 +17,7 @@ export class InterestContent extends Component {
     {
       title: 'Terraform',
       topicUrl: 'https://github.com/topics/terraform',
-      logoUrl: 'https://www.terraform.io/assets/images/og-image-8b3e4f7d.png',
+      logoUrl: 'https://www.terraform.io/assets/images/product-icons/terraform-icon-color-7fbc9ecc.svg',
     },
     {
       title: 'Typescript',
