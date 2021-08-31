@@ -2,7 +2,7 @@ import { Component, ReactNode } from 'react';
 import { Avatar, Link, Typography } from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { LocationIcon, MailIcon, MarkGithubIcon } from '@primer/octicons-react';
+import { FileIcon, LocationIcon, MailIcon, MarkGithubIcon } from '@primer/octicons-react';
 import { Octokit } from 'octokit';
 
 interface SidebarProps {}
@@ -125,6 +125,22 @@ export class Sidebar extends Component<SidebarProps, SidebarState> {
           </div>
           <Link href={`https://www.instagram.com/${this.state.instagramUsername}`} target="_blank" rel="noopener">
             Instagram
+          </Link>
+        </div>
+
+        {/* Resume Link */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            paddingBottom: '10px',
+          }}
+        >
+          <div style={{ paddingRight: '5px' }}>
+            <FileIcon size={20}></FileIcon>
+          </div>
+          <Link href={`https://xsalazar.com/resume.pdf`} target="_blank" rel="noopener">
+            Resume
           </Link>
         </div>
 
