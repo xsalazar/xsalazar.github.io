@@ -17,10 +17,9 @@ jobs:
 
       - name: Download Resume 📜
         uses: xsalazar/actions/downloader@master
-        working-directory: ./public/
         with:
           url: ${{ secrets.RESUME_URL }}
-          filename: 'resume.pdf'
+          filename: 'public/resume.pdf'
 
       - name: Setup Node
         uses: actions/setup-node@v1
