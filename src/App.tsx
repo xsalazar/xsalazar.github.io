@@ -14,11 +14,12 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Sidebar } from './Components/Sidebar/Sidebar';
-import { RepoContent } from './Components/RepoContent/RepoContent';
-import { ProjectContent } from './Components/ProjectContent/ProjectContent';
-import { ContributionContent } from './Components/ContributionContent/ContributionContent';
-import { InterestContent } from './Components/InterestContent/InterestContent';
+import { SidebarComponent } from './Components/SidebarComponent/SidebarComponent';
+import { RepoComponent } from './Components/RepoComponent/RepoComponent';
+import { ProjectComponent } from './Components/ProjectComponent/ProjectComponent';
+import { ContributionComponent } from './Components/ContributionComponent/ContributionContent';
+import { InterestComponent } from './Components/InterestComponent/InterestComponent';
+import { CertificationComponent } from './Components/CertificationComponent/CertificationComponent';
 
 const drawerWidth = 300;
 
@@ -94,7 +95,7 @@ export default function App() {
               keepMounted: true, // Better open performance on mobile.
             }}
           >
-            <Sidebar></Sidebar>
+            <SidebarComponent></SidebarComponent>
           </Drawer>
         </Hidden>
         <Hidden smDown>
@@ -105,7 +106,7 @@ export default function App() {
             variant="permanent"
             open
           >
-            <Sidebar></Sidebar>
+            <SidebarComponent></SidebarComponent>
           </Drawer>
         </Hidden>
       </nav>
@@ -116,10 +117,10 @@ export default function App() {
           <Grid style={{ paddingBottom: '25px' }}>
             <Typography variant="h5">My Projects</Typography>
             <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
-              GitHub repositories that I've built.
+              GitHub repositories I've built.
             </Typography>
             <Grid container spacing={2}>
-              <RepoContent></RepoContent>
+              <RepoComponent></RepoComponent>
             </Grid>
           </Grid>
 
@@ -129,7 +130,7 @@ export default function App() {
               Projects I've Published.
             </Typography>
             <Grid container spacing={2}>
-              <ProjectContent></ProjectContent>
+              <ProjectComponent></ProjectComponent>
             </Grid>
           </Grid>
 
@@ -140,7 +141,18 @@ export default function App() {
               Open source contributions I've made.
             </Typography>
             <Grid container spacing={2}>
-              <ContributionContent></ContributionContent>
+              <ContributionComponent></ContributionComponent>
+            </Grid>
+          </Grid>
+
+          {/* My Certifications */}
+          <Grid style={{ paddingBottom: '25px' }}>
+            <Typography variant="h5">My Certifications</Typography>
+            <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
+              Professional certifications I've received.
+            </Typography>
+            <Grid container spacing={2}>
+              <CertificationComponent></CertificationComponent>
             </Grid>
           </Grid>
 
@@ -151,7 +163,7 @@ export default function App() {
               Topics that I want to learn more about.
             </Typography>
             <Grid container spacing={2}>
-              <InterestContent></InterestContent>
+              <InterestComponent></InterestComponent>
             </Grid>
           </Grid>
         </Container>

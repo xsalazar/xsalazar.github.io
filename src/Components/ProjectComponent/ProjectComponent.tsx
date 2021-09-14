@@ -9,7 +9,7 @@ interface Project {
   url: string;
 }
 
-export class ProjectContent extends Component {
+export class ProjectComponent extends Component {
   projects: Array<Project> = [
     {
       name: 'Learn Emoji',

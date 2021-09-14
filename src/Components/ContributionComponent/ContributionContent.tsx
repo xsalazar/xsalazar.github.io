@@ -4,23 +4,23 @@ import { Octokit } from 'octokit';
 import { Component, ReactNode } from 'react';
 import LinguistLanguages from 'linguist-languages';
 
-interface ContributionContentProps {}
+interface ContributionComponentProps {}
 
-interface ContributionContentState {
+interface ContributionComponentState {
   loading: boolean;
   contributions: any[];
 }
 
-interface Contribution {
+interface ContributionMetadata {
   owner: string;
   repo: string;
   pullNumber: number;
 }
 
-export class ContributionContent extends Component<ContributionContentProps, ContributionContentState> {
+export class ContributionComponent extends Component<ContributionComponentProps, ContributionComponentState> {
   languagesToColors: Map<string, LinguistLanguages.Language> = new Map(Object.entries(LinguistLanguages));
 
-  contributions: Array<Contribution> = [
+  contrbutionMetadata: Array<ContributionMetadata> = [
     {
       owner: 'hashicorp',
       repo: 'terraform-provider-aws',
@@ -59,7 +59,7 @@ export class ContributionContent extends Component<ContributionContentProps, Con
     },
   ];
 
-  constructor(props: ContributionContentProps) {
+  constructor(props: ContributionComponentProps) {
     super(props);
     this.state = {
       loading: true,
@@ -71,7 +71,7 @@ export class ContributionContent extends Component<ContributionContentProps, Con
     const octokit = new Octokit();
 
     const c = await Promise.all(
-      this.contributions.map(async (contribution) => {
+      this.contrbutionMetadata.map(async (contribution) => {
         let response = await octokit.rest.pulls.get({
           owner: contribution.owner,
           repo: contribution.repo,

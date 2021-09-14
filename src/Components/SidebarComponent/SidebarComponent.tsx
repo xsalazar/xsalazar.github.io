@@ -5,9 +5,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { FileIcon, LocationIcon, MailIcon, MarkGithubIcon } from '@primer/octicons-react';
 import { Octokit } from 'octokit';
 
-interface SidebarProps {}
+interface SidebarComponentProps {}
 
-interface SidebarState {
+interface SidebarComponentState {
   name: string;
   email: string;
   profilePictureUrl: string;
@@ -17,10 +17,11 @@ interface SidebarState {
   githubLocation: string;
   linkedInUsername: string;
   instagramUsername: string;
+  loading: boolean;
 }
 
-export class Sidebar extends Component<SidebarProps, SidebarState> {
-  constructor(props: SidebarProps) {
+export class SidebarComponent extends Component<SidebarComponentProps, SidebarComponentState> {
+  constructor(props: SidebarComponentProps) {
     super(props);
     this.state = {
       name: '',
@@ -32,6 +33,7 @@ export class Sidebar extends Component<SidebarProps, SidebarState> {
       githubLocation: '',
       linkedInUsername: 'xsalazar',
       instagramUsername: 'xsalazar3',
+      loading: true,
     };
   }
 
@@ -47,10 +49,15 @@ export class Sidebar extends Component<SidebarProps, SidebarState> {
       githubUrl: user.data.html_url as string,
       githubUsername: user.data.login as string,
       githubLocation: user.data.location as string,
+      loading: false,
     });
   }
 
   render(): ReactNode {
+    if (this.state.loading) {
+      return <div></div>;
+    }
+
     return (
       <div>
         {/* Icon */}

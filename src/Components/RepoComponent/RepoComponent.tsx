@@ -4,17 +4,17 @@ import { Octokit } from 'octokit';
 import { Component, ReactNode } from 'react';
 import LinguistLanguages from 'linguist-languages';
 
-interface RepoContentProps {}
+interface RepoComponentProps {}
 
-interface RepoContentState {
+interface RepoComponentState {
   loading: boolean;
   repositories: any[];
 }
 
-export class RepoContent extends Component<RepoContentProps, RepoContentState> {
-  languagesToColors: Map<string, LinguistLanguages.Language> = new Map(Object.entries(LinguistLanguages));
+export class RepoComponent extends Component<RepoComponentProps, RepoComponentState> {
+  private languagesToColors: Map<string, LinguistLanguages.Language> = new Map(Object.entries(LinguistLanguages));
 
-  constructor(props: RepoContentProps) {
+  constructor(props: RepoComponentProps) {
     super(props);
     this.state = {
       loading: true,

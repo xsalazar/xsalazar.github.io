@@ -7,7 +7,7 @@ interface Interest {
   topicUrl: string;
 }
 
-export class InterestContent extends Component {
+export class InterestComponent extends Component {
   interests: Array<Interest> = [
     {
       title: 'AWS',
