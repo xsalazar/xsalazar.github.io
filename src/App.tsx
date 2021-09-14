@@ -13,7 +13,6 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
-import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Sidebar } from './Components/Sidebar/Sidebar';
 import { RepoContent } from './Components/RepoContent/RepoContent';
