@@ -1,4 +1,4 @@
-import { Grid, Card, CardContent, Typography } from '@material-ui/core';
+import { Grid, Card, CardContent } from '@material-ui/core';
 import React, { Component, ReactNode } from 'react';
 
 interface Certification {
