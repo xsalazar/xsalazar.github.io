@@ -13,6 +13,10 @@ export class CertificationComponent extends Component {
       logoUrl:
         'https://d1.awsstatic.com/training-and-certification/Certification%20Badges/AWS-Certified_Cloud-Practitioner_512x512.bc006f14f986fa4f3ca238b0b62be458ce1fb5ce.png',
     },
+    {
+      title: 'Hashicorp Certified: Terraform Associate',
+      logoUrl: 'https://www.datocms-assets.com/2885/1586800192-terraformassociateweb.png'
+    }
   ];
 
   render(): ReactNode {
