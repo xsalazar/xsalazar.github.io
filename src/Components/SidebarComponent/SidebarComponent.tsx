@@ -2,7 +2,7 @@ import { Component, ReactNode } from 'react';
 import { Avatar, Link, Typography } from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { FileIcon, LocationIcon, MailIcon, MarkGithubIcon } from '@primer/octicons-react';
+import { LocationIcon, MailIcon, MarkGithubIcon } from '@primer/octicons-react';
 import { Octokit } from 'octokit';
 
 interface SidebarComponentProps {}
