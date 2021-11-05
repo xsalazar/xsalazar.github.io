@@ -136,6 +136,7 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
         </div>
 
         {/* Resume Link */}
+        {/*
         <div
           style={{
             display: 'flex',
@@ -150,6 +151,7 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
             Resume
           </Link>
         </div>
+        */}
 
         {/* Mail Link */}
         <div
