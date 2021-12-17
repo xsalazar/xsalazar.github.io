@@ -4,10 +4,14 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Dependabot PR Check"]
+    types: 
+      - completed
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code 🛎
@@ -36,7 +40,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '17'
 
       - name: Install and Build 🔧
         run: |
