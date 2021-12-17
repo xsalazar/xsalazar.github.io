@@ -37,7 +37,7 @@ jobs:
           url: ${{ secrets.AWS_CERTIFICATION_URL }}
           filename: 'public/aws-cert.pdf'
 
-      - name: Setup Node
+      - name: Setup Node 🏗
         uses: actions/setup-node@v1
         with:
           node-version: '17'
