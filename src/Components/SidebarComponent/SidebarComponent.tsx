@@ -1,9 +1,9 @@
-import { Component, ReactNode } from 'react';
-import { Avatar, Link, Typography } from '@material-ui/core';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { LocationIcon, MailIcon, MarkGithubIcon } from '@primer/octicons-react';
-import { Octokit } from 'octokit';
+import { Component, ReactNode } from "react";
+import { Avatar, Link, Typography } from "@material-ui/core";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { LocationIcon, MailIcon, MarkGithubIcon } from "@primer/octicons-react";
+import { Octokit } from "octokit";
 
 interface SidebarComponentProps {}
 
@@ -20,19 +20,22 @@ interface SidebarComponentState {
   loading: boolean;
 }
 
-export class SidebarComponent extends Component<SidebarComponentProps, SidebarComponentState> {
+export class SidebarComponent extends Component<
+  SidebarComponentProps,
+  SidebarComponentState
+> {
   constructor(props: SidebarComponentProps) {
     super(props);
     this.state = {
-      name: '',
-      email: 'contact@xsalazar.com',
-      profilePictureUrl: '',
-      description: '',
-      githubUrl: '',
-      githubUsername: '',
-      githubLocation: '',
-      linkedInUsername: 'xsalazar',
-      instagramUsername: 'xsalazar3',
+      name: "",
+      email: "contact@xsalazar.com",
+      profilePictureUrl: "",
+      description: "",
+      githubUrl: "",
+      githubUsername: "",
+      githubLocation: "",
+      linkedInUsername: "xsalazar",
+      instagramUsername: "xsalazar3",
       loading: true,
     };
   }
@@ -40,7 +43,7 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
   async componentDidMount(): Promise<void> {
     const octokit = new Octokit();
     const user = await octokit.rest.users.getByUsername({
-      username: 'xsalazar',
+      username: "xsalazar",
     });
     this.setState({
       name: user.data.name as string,
@@ -61,27 +64,34 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
     return (
       <div>
         {/* Icon */}
-        <Avatar src={this.state.profilePictureUrl} style={{ width: '150px', height: '150px', marginBottom: '25px' }}></Avatar>
+        <Avatar
+          src={this.state.profilePictureUrl}
+          style={{ width: "150px", height: "150px", marginBottom: "25px" }}
+        ></Avatar>
 
         {/* Name */}
-        <Typography variant="h4" align="left" style={{ paddingBottom: '15px' }}>
+        <Typography variant="h4" align="left" style={{ paddingBottom: "15px" }}>
           {this.state.name}
         </Typography>
 
         {/* Bio */}
-        <Typography variant="body1" align="left" style={{ paddingBottom: '15px' }}>
+        <Typography
+          variant="body1"
+          align="left"
+          style={{ paddingBottom: "15px" }}
+        >
           {this.state.description}
         </Typography>
 
         {/* Location */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            paddingBottom: '10px',
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "10px",
           }}
         >
-          <div style={{ paddingRight: '5px' }}>
+          <div style={{ paddingRight: "5px" }}>
             <LocationIcon size={20}></LocationIcon>
           </div>
           <Typography>{this.state.githubLocation}</Typography>
@@ -90,12 +100,12 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
         {/* GitHub Link */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            paddingBottom: '10px',
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "10px",
           }}
         >
-          <div style={{ paddingRight: '5px' }}>
+          <div style={{ paddingRight: "5px" }}>
             <MarkGithubIcon size={20}></MarkGithubIcon>
           </div>
           <Link href={this.state.githubUrl} target="_blank" rel="noopener">
@@ -106,15 +116,19 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
         {/* LinkedIn Link */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            paddingBottom: '10px',
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "10px",
           }}
         >
-          <div style={{ paddingRight: '5px' }}>
-            <LinkedInIcon style={{ fontSize: '20px' }}></LinkedInIcon>
+          <div style={{ paddingRight: "5px" }}>
+            <LinkedInIcon style={{ fontSize: "20px" }}></LinkedInIcon>
           </div>
-          <Link href={`https://www.linkedin.com/in/${this.state.linkedInUsername}`} target="_blank" rel="noopener">
+          <Link
+            href={`https://www.linkedin.com/in/${this.state.linkedInUsername}`}
+            target="_blank"
+            rel="noopener"
+          >
             LinkedIn
           </Link>
         </div>
@@ -122,15 +136,22 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
         {/* Instagram Link */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            paddingBottom: '10px',
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "10px",
           }}
         >
-          <div style={{ paddingRight: '5px' }}>
-            <InstagramIcon fontSize="large" style={{ fontSize: '20px' }}></InstagramIcon>
+          <div style={{ paddingRight: "5px" }}>
+            <InstagramIcon
+              fontSize="large"
+              style={{ fontSize: "20px" }}
+            ></InstagramIcon>
           </div>
-          <Link href={`https://www.instagram.com/${this.state.instagramUsername}`} target="_blank" rel="noopener">
+          <Link
+            href={`https://www.instagram.com/${this.state.instagramUsername}`}
+            target="_blank"
+            rel="noopener"
+          >
             Instagram
           </Link>
         </div>
@@ -156,12 +177,12 @@ export class SidebarComponent extends Component<SidebarComponentProps, SidebarCo
         {/* Mail Link */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            paddingBottom: '10px',
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "10px",
           }}
         >
-          <div style={{ paddingRight: '5px' }}>
+          <div style={{ paddingRight: "5px" }}>
             <MailIcon size={20}></MailIcon>
           </div>
           <Link href={`mailto:${this.state.email}`}>contact@xsalazar.com</Link>

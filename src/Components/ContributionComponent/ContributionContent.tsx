@@ -1,8 +1,8 @@
-import { Card, CardContent, Grid, Link, Typography } from '@material-ui/core';
-import { DotFillIcon, GitMergeIcon } from '@primer/octicons-react';
-import { Octokit } from 'octokit';
-import { Component, ReactNode } from 'react';
-import LinguistLanguages from 'linguist-languages';
+import { Card, CardContent, Grid, Link, Typography } from "@material-ui/core";
+import { DotFillIcon, GitMergeIcon } from "@primer/octicons-react";
+import { Octokit } from "octokit";
+import { Component, ReactNode } from "react";
+import LinguistLanguages from "linguist-languages";
 
 interface ContributionComponentProps {}
 
@@ -17,44 +17,49 @@ interface ContributionMetadata {
   pullNumber: number;
 }
 
-export class ContributionComponent extends Component<ContributionComponentProps, ContributionComponentState> {
-  languagesToColors: Map<string, LinguistLanguages.Language> = new Map(Object.entries(LinguistLanguages));
+export class ContributionComponent extends Component<
+  ContributionComponentProps,
+  ContributionComponentState
+> {
+  languagesToColors: Map<string, LinguistLanguages.Language> = new Map(
+    Object.entries(LinguistLanguages)
+  );
 
   contrbutionMetadata: Array<ContributionMetadata> = [
     {
-      owner: 'hashicorp',
-      repo: 'terraform-provider-aws',
+      owner: "hashicorp",
+      repo: "terraform-provider-aws",
       pullNumber: 11984,
     },
     {
-      owner: 'hashicorp',
-      repo: 'terraform-provider-aws',
+      owner: "hashicorp",
+      repo: "terraform-provider-aws",
       pullNumber: 10175,
     },
     {
-      owner: 'hashicorp',
-      repo: 'terraform-provider-aws',
+      owner: "hashicorp",
+      repo: "terraform-provider-aws",
       pullNumber: 10017,
     },
     {
-      owner: 'hashicorp',
-      repo: 'terraform-provider-aws',
+      owner: "hashicorp",
+      repo: "terraform-provider-aws",
       pullNumber: 10015,
     },
     {
-      owner: 'hashicorp',
-      repo: 'terraform-provider-aws',
+      owner: "hashicorp",
+      repo: "terraform-provider-aws",
       pullNumber: 17625,
     },
-    { owner: 'dependabot', repo: 'fetch-metadata', pullNumber: 34 },
+    { owner: "dependabot", repo: "fetch-metadata", pullNumber: 34 },
     {
-      owner: 'glennjones',
-      repo: 'hapi-swagger',
+      owner: "glennjones",
+      repo: "hapi-swagger",
       pullNumber: 727,
     },
     {
-      owner: 'glennjones',
-      repo: 'hapi-swagger',
+      owner: "glennjones",
+      repo: "hapi-swagger",
       pullNumber: 728,
     },
   ];
@@ -92,20 +97,27 @@ export class ContributionComponent extends Component<ContributionComponentProps,
     return this.state.contributions.map((contribution) => {
       return (
         <Grid item key={contribution.id}>
-          <Card variant="outlined" style={{ width: '300px', height: '100%', display: 'flex' }}>
-            <CardContent style={{ display: 'flex', flexDirection: 'column' }}>
+          <Card
+            variant="outlined"
+            style={{ width: "300px", height: "100%", display: "flex" }}
+          >
+            <CardContent style={{ display: "flex", flexDirection: "column" }}>
               {/* Title */}
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  paddingBottom: '10px',
+                  display: "flex",
+                  alignItems: "center",
+                  paddingBottom: "10px",
                 }}
               >
-                <div style={{ paddingRight: '5px' }}>
+                <div style={{ paddingRight: "5px" }}>
                   <GitMergeIcon size="small" />
                 </div>
-                <Link href={contribution.html_url} target="_blank" rel="noopener">
+                <Link
+                  href={contribution.html_url}
+                  target="_blank"
+                  rel="noopener"
+                >
                   {contribution.base.repo.name}
                 </Link>
               </div>
@@ -116,15 +128,19 @@ export class ContributionComponent extends Component<ContributionComponentProps,
               </div>
 
               {/* Language */}
-              <div style={{ paddingTop: '15px' }}>
+              <div style={{ paddingTop: "15px" }}>
                 <span
                   style={{
-                    color: this.getColorForLanguage(contribution.base.repo.language),
+                    color: this.getColorForLanguage(
+                      contribution.base.repo.language
+                    ),
                   }}
                 >
                   <DotFillIcon size="small" />
                 </span>
-                <Typography variant="caption">{contribution.base.repo.language}</Typography>
+                <Typography variant="caption">
+                  {contribution.base.repo.language}
+                </Typography>
               </div>
             </CardContent>
           </Card>
@@ -135,9 +151,9 @@ export class ContributionComponent extends Component<ContributionComponentProps,
 
   getColorForLanguage(language: string): string {
     if (this.languagesToColors.has(language)) {
-      return this.languagesToColors.get(language)?.color ?? '#aaaaaa';
+      return this.languagesToColors.get(language)?.color ?? "#aaaaaa";
     } else {
-      return '#aaaaaa';
+      return "#aaaaaa";
     }
   }
 }

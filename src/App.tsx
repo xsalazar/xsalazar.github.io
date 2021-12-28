@@ -10,47 +10,47 @@ import {
   Theme,
   Toolbar,
   Typography,
-} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { SidebarComponent } from './Components/SidebarComponent/SidebarComponent';
-import { RepoComponent } from './Components/RepoComponent/RepoComponent';
-import { ProjectComponent } from './Components/ProjectComponent/ProjectComponent';
-import { ContributionComponent } from './Components/ContributionComponent/ContributionContent';
-import { InterestComponent } from './Components/InterestComponent/InterestComponent';
-import { CertificationComponent } from './Components/CertificationComponent/CertificationComponent';
+} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { SidebarComponent } from "./Components/SidebarComponent/SidebarComponent";
+import { RepoComponent } from "./Components/RepoComponent/RepoComponent";
+import { ProjectComponent } from "./Components/ProjectComponent/ProjectComponent";
+import { ContributionComponent } from "./Components/ContributionComponent/ContributionContent";
+import { InterestComponent } from "./Components/InterestComponent/InterestComponent";
+import { CertificationComponent } from "./Components/CertificationComponent/CertificationComponent";
 
 const drawerWidth = 300;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: 'flex',
+      display: "flex",
     },
     drawer: {
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up("md")]: {
         width: drawerWidth,
         flexShrink: 0,
       },
     },
     appBar: {
       background: theme.palette.background.default,
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up("md")]: {
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
       },
     },
     menuButton: {
       marginRight: theme.spacing(2),
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
+      [theme.breakpoints.up("md")]: {
+        display: "none",
       },
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-      padding: '40px',
+      padding: "40px",
       width: drawerWidth,
     },
     content: {
@@ -72,9 +72,19 @@ export default function App() {
     <div className={classes.root}>
       <CssBaseline />
       <Hidden mdUp>
-        <AppBar position="fixed" className={classes.appBar} color="default" elevation={0}>
+        <AppBar
+          position="fixed"
+          className={classes.appBar}
+          color="default"
+          elevation={0}
+        >
           <Toolbar>
-            <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
+            <IconButton
+              color="inherit"
+              edge="start"
+              onClick={handleDrawerToggle}
+              className={classes.menuButton}
+            >
               <MenuIcon />
             </IconButton>
             <Typography>Xavier Salazar - Software Engineer</Typography>
@@ -112,11 +122,15 @@ export default function App() {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Container style={{ maxWidth: '1000px' }}>
+        <Container style={{ maxWidth: "1000px" }}>
           {/* My Repositories */}
-          <Grid style={{ paddingBottom: '25px' }}>
+          <Grid style={{ paddingBottom: "25px" }}>
             <Typography variant="h5">My Projects</Typography>
-            <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
+            <Typography
+              variant="body1"
+              color="textSecondary"
+              style={{ paddingBottom: "15px" }}
+            >
               GitHub repositories I've built.
             </Typography>
             <Grid container spacing={2}>
@@ -125,8 +139,12 @@ export default function App() {
           </Grid>
 
           {/* My Published Projects */}
-          <Grid style={{ paddingBottom: '25px' }}>
-            <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
+          <Grid style={{ paddingBottom: "25px" }}>
+            <Typography
+              variant="body1"
+              color="textSecondary"
+              style={{ paddingBottom: "15px" }}
+            >
               Projects I've Published.
             </Typography>
             <Grid container spacing={2}>
@@ -135,9 +153,13 @@ export default function App() {
           </Grid>
 
           {/* My Contributions */}
-          <Grid style={{ paddingBottom: '25px' }}>
+          <Grid style={{ paddingBottom: "25px" }}>
             <Typography variant="h5">My Contributions</Typography>
-            <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
+            <Typography
+              variant="body1"
+              color="textSecondary"
+              style={{ paddingBottom: "15px" }}
+            >
               Open source contributions I've made.
             </Typography>
             <Grid container spacing={2}>
@@ -146,9 +168,13 @@ export default function App() {
           </Grid>
 
           {/* My Certifications */}
-          <Grid style={{ paddingBottom: '25px' }}>
+          <Grid style={{ paddingBottom: "25px" }}>
             <Typography variant="h5">My Certifications</Typography>
-            <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
+            <Typography
+              variant="body1"
+              color="textSecondary"
+              style={{ paddingBottom: "15px" }}
+            >
               Professional certifications I've received.
             </Typography>
             <Grid container spacing={2}>
@@ -157,9 +183,13 @@ export default function App() {
           </Grid>
 
           {/* My Interests */}
-          <Grid style={{ paddingBottom: '25px' }}>
+          <Grid style={{ paddingBottom: "25px" }}>
             <Typography variant="h5">My Interests</Typography>
-            <Typography variant="body1" color="textSecondary" style={{ paddingBottom: '15px' }}>
+            <Typography
+              variant="body1"
+              color="textSecondary"
+              style={{ paddingBottom: "15px" }}
+            >
               Topics that I want to learn more about.
             </Typography>
             <Grid container spacing={2}>

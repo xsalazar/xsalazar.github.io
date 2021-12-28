@@ -1,8 +1,8 @@
-import { Card, CardContent, Grid, Link, Typography } from '@material-ui/core';
-import { DotFillIcon, RepoIcon } from '@primer/octicons-react';
-import { Octokit } from 'octokit';
-import { Component, ReactNode } from 'react';
-import LinguistLanguages from 'linguist-languages';
+import { Card, CardContent, Grid, Link, Typography } from "@material-ui/core";
+import { DotFillIcon, RepoIcon } from "@primer/octicons-react";
+import { Octokit } from "octokit";
+import { Component, ReactNode } from "react";
+import LinguistLanguages from "linguist-languages";
 
 interface RepoComponentProps {}
 
@@ -11,8 +11,13 @@ interface RepoComponentState {
   repositories: any[];
 }
 
-export class RepoComponent extends Component<RepoComponentProps, RepoComponentState> {
-  private languagesToColors: Map<string, LinguistLanguages.Language> = new Map(Object.entries(LinguistLanguages));
+export class RepoComponent extends Component<
+  RepoComponentProps,
+  RepoComponentState
+> {
+  private languagesToColors: Map<string, LinguistLanguages.Language> = new Map(
+    Object.entries(LinguistLanguages)
+  );
 
   constructor(props: RepoComponentProps) {
     super(props);
@@ -25,9 +30,9 @@ export class RepoComponent extends Component<RepoComponentProps, RepoComponentSt
   async componentDidMount(): Promise<void> {
     const octokit = new Octokit();
     let response = await octokit.rest.repos.listForUser({
-      username: 'xsalazar',
-      sort: 'pushed',
-      type: 'owner',
+      username: "xsalazar",
+      sort: "pushed",
+      type: "owner",
     });
 
     const repositories = response.data.filter((r) => !r.fork).slice(0, 6);
@@ -46,17 +51,20 @@ export class RepoComponent extends Component<RepoComponentProps, RepoComponentSt
     return this.state.repositories.map((repo) => {
       return (
         <Grid item key={repo.id}>
-          <Card variant="outlined" style={{ width: '300px', height: '100%', display: 'flex' }}>
-            <CardContent style={{ display: 'flex', flexDirection: 'column' }}>
+          <Card
+            variant="outlined"
+            style={{ width: "300px", height: "100%", display: "flex" }}
+          >
+            <CardContent style={{ display: "flex", flexDirection: "column" }}>
               {/* Title */}
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  paddingBottom: '10px',
+                  display: "flex",
+                  alignItems: "center",
+                  paddingBottom: "10px",
                 }}
               >
-                <div style={{ paddingRight: '5px' }}>
+                <div style={{ paddingRight: "5px" }}>
                   <RepoIcon size="small" />
                 </div>
                 <Link href={repo.html_url} target="_blank" rel="noopener">
@@ -70,8 +78,10 @@ export class RepoComponent extends Component<RepoComponentProps, RepoComponentSt
               </div>
 
               {/* Language */}
-              <div style={{ paddingTop: '15px' }}>
-                <span style={{ color: this.getColorForLanguage(repo.language) }}>
+              <div style={{ paddingTop: "15px" }}>
+                <span
+                  style={{ color: this.getColorForLanguage(repo.language) }}
+                >
                   <DotFillIcon size="small" />
                 </span>
                 <Typography variant="caption">{repo.language}</Typography>
@@ -85,9 +95,9 @@ export class RepoComponent extends Component<RepoComponentProps, RepoComponentSt
 
   getColorForLanguage(language: string): string {
     if (this.languagesToColors.has(language)) {
-      return this.languagesToColors.get(language)?.color ?? '#aaaaaa';
+      return this.languagesToColors.get(language)?.color ?? "#aaaaaa";
     } else {
-      return '#aaaaaa';
+      return "#aaaaaa";
     }
   }
 }

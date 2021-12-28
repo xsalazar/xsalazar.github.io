@@ -19,24 +19,24 @@ jobs:
         uses: xsalazar/actions/downloader@master
         with:
           url: ${{ secrets.RESUME_URL }}
-          filename: 'public/resume.pdf'
-          
+          filename: "public/resume.pdf"
+
       - name: Download Terraform Certification 💾
         uses: xsalazar/actions/downloader@master
         with:
           url: ${{ secrets.TERRAFORM_CERTIFICATION_URL }}
-          filename: 'public/terraform-cert.pdf'
-          
+          filename: "public/terraform-cert.pdf"
+
       - name: Download AWS Certification 💾
         uses: xsalazar/actions/downloader@master
         with:
           url: ${{ secrets.AWS_CERTIFICATION_URL }}
-          filename: 'public/aws-cert.pdf'
+          filename: "public/aws-cert.pdf"
 
       - name: Setup Node 🏗
         uses: actions/setup-node@v1
         with:
-          node-version: '17'
+          node-version: "17"
 
       - name: Install and Build 🔧
         run: |
