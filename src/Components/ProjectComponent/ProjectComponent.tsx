@@ -12,6 +12,12 @@ interface Project {
 export class ProjectComponent extends Component {
   projects: Array<Project> = [
     {
+      name: "Emoji Kitchen",
+      description:
+        "Easily browse and save over 20,000 unique emoji mashups, prepared fresh from Google's kitchen!",
+      url: "https://emojikitchen.dev",
+    },
+    {
       name: "Download Emoji",
       description:
         "Download and save copies of your favorite emoji for easy reuse of .jpeg and .png images.",
