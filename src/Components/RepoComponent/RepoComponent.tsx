@@ -35,7 +35,7 @@ export class RepoComponent extends Component<
       type: "owner",
     });
 
-    const repositories = response.data.filter((r) => !r.fork).slice(0, 6);
+    const repositories = response.data.filter((r) => !r.fork).slice(0, 9);
 
     this.setState({
       repositories: repositories,

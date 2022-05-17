@@ -10,6 +10,7 @@ import {
   Theme,
   Toolbar,
   Typography,
+  HiddenProps,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React from "react";
@@ -60,6 +61,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+interface MyHiddenProps {
+  children: React.ReactElement<any, any>;
+}
+
 export default function App() {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -68,10 +73,16 @@ export default function App() {
     setMobileOpen(!mobileOpen);
   };
 
+  const CustomHidden = React.forwardRef(
+    (props: MyHiddenProps & HiddenProps, ref) => {
+      return <Hidden {...props} />;
+    }
+  );
+
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Hidden mdUp>
+      <CustomHidden mdUp>
         <AppBar
           position="fixed"
           className={classes.appBar}
@@ -90,9 +101,9 @@ export default function App() {
             <Typography>Xavier Salazar - Software Engineer</Typography>
           </Toolbar>
         </AppBar>
-      </Hidden>
+      </CustomHidden>
       <nav className={classes.drawer}>
-        <Hidden mdUp>
+        <CustomHidden mdUp>
           <Drawer
             variant="temporary"
             anchor="left"
@@ -107,8 +118,8 @@ export default function App() {
           >
             <SidebarComponent></SidebarComponent>
           </Drawer>
-        </Hidden>
-        <Hidden smDown>
+        </CustomHidden>
+        <CustomHidden smDown>
           <Drawer
             classes={{
               paper: classes.drawerPaper,
@@ -118,7 +129,7 @@ export default function App() {
           >
             <SidebarComponent></SidebarComponent>
           </Drawer>
-        </Hidden>
+        </CustomHidden>
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
