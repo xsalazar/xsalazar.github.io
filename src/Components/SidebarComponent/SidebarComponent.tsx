@@ -2,7 +2,12 @@ import { Component, ReactNode } from "react";
 import { Avatar, Link, Typography } from "@material-ui/core";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import { LocationIcon, MailIcon, MarkGithubIcon } from "@primer/octicons-react";
+import {
+  LocationIcon,
+  MailIcon,
+  MarkGithubIcon,
+  OrganizationIcon,
+} from "@primer/octicons-react";
 import { Octokit } from "octokit";
 
 interface SidebarComponentProps {}
@@ -18,6 +23,7 @@ interface SidebarComponentState {
   linkedInUsername: string;
   instagramUsername: string;
   loading: boolean;
+  organization: string;
 }
 
 export class SidebarComponent extends Component<
@@ -37,6 +43,7 @@ export class SidebarComponent extends Component<
       linkedInUsername: "xsalazar",
       instagramUsername: "xsalazar3",
       loading: true,
+      organization: "Slack",
     };
   }
 
@@ -95,6 +102,26 @@ export class SidebarComponent extends Component<
             <LocationIcon size={20}></LocationIcon>
           </div>
           <Typography>{this.state.githubLocation}</Typography>
+        </div>
+
+        {/* Work Organization */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "10px",
+          }}
+        >
+          <div style={{ paddingRight: "5px" }}>
+            <OrganizationIcon size={20}></OrganizationIcon>
+          </div>
+          <Link
+            href="https://github.com/slackhq"
+            target="_blank"
+            rel="noopener"
+          >
+            {this.state.organization}
+          </Link>
         </div>
 
         {/* GitHub Link */}
