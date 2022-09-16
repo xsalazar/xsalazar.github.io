@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Card,
-  CardActions,
   CardContent,
   Container,
   Grid,
@@ -41,9 +40,11 @@ export default class Repositories extends React.Component<
     const { isLoading, repositories } = this.state;
 
     return (
-      <Container>
+      <Container sx={{ pb: 2 }}>
         <Box>
-          <Typography variant="h5">My Projects</Typography>
+          <Typography variant="h5" gutterBottom>
+            My Projects
+          </Typography>
           <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
             GitHub repositories I've built.
           </Typography>
