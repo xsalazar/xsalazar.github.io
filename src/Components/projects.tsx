@@ -20,7 +20,7 @@ interface Project {
 }
 
 export default class Projects extends React.Component {
-  projects: Array<Project> = [
+  private projects: Array<Project> = [
     {
       name: "Fluent Emoji",
       description:
@@ -74,7 +74,7 @@ export default class Projects extends React.Component {
 
   render(): React.ReactNode {
     return (
-      <Container>
+      <Container sx={{ pb: 2 }}>
         <Box>
           <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
             Projects I've Published.
@@ -83,7 +83,7 @@ export default class Projects extends React.Component {
           <Grid container spacing={2}>
             {this.projects.map((project) => {
               return (
-                <Grid item xs={4} key={project.name}>
+                <Grid item xs={12} sm={6} md={4} key={project.name}>
                   <Card
                     variant="outlined"
                     sx={{
