@@ -100,7 +100,7 @@ export default class Repositories extends React.Component {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        paddingBottom: "1px",
+                        paddingBottom: "15px",
                       }}
                     >
                       <div style={{ paddingRight: "5px" }}>
