@@ -111,13 +111,13 @@ export default class Contributions extends React.Component {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        paddingBottom: "10px",
+                        paddingBottom: "15px",
                       }}
                     >
                       <div style={{ paddingRight: "5px" }}>
                         <GitMergeIcon size="small" />
                       </div>
-                      <Typography variant="subtitle1">
+                      <Typography variant="body2">
                         <Link
                           href={`https://github.com/${contribution.owner}/${contribution.repo}/pull/${contribution.pullNumber}`}
                           target="_blank"

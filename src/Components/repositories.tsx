@@ -100,13 +100,13 @@ export default class Repositories extends React.Component {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        paddingBottom: "10px",
+                        paddingBottom: "1px",
                       }}
                     >
                       <div style={{ paddingRight: "5px" }}>
                         <RepoIcon size="small" />
                       </div>
-                      <Typography variant="subtitle1">
+                      <Typography variant="body2">
                         <Link
                           href={`https://github.com/xsalazar/${repository.name}`}
                           target="_blank"

@@ -10,10 +10,10 @@ export default function App() {
   return (
     <div>
       {/* Entire Content Container */}
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ pt: 2 }}>
         <Grid container>
           {/* Left-Side About */}
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={3} sx={{ pb: 2 }}>
             <Container>
               <About />
             </Container>

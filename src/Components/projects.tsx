@@ -110,11 +110,11 @@ export default class Projects extends React.Component {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        paddingBottom: "10px",
+                        paddingBottom: "15px",
                       }}
                     >
                       <Public style={{ fontSize: "16px" }} />
-                      <Typography variant="subtitle1">
+                      <Typography variant="body2">
                         <Link
                           href={project.url}
                           target="_blank"
@@ -135,7 +135,7 @@ export default class Projects extends React.Component {
 
                     {/* Link */}
                     <div>
-                      <Typography variant="subtitle1">
+                      <Typography variant="body2">
                         <LinkIcon size="small" />
                         <Link
                           href={project.url}

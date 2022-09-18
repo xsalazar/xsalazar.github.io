@@ -1,18 +1,19 @@
 import React from "react";
 import { Avatar, Grid, Link, Typography } from "@mui/material";
 import {
-  LocationIcon,
-  OrganizationIcon,
-  MarkGithubIcon,
-  MailIcon,
-  FileIcon,
-} from "@primer/octicons-react";
-import { LinkedIn, Instagram } from "@mui/icons-material";
+  LinkedIn,
+  Instagram,
+  GitHub,
+  MailOutline,
+  WorkOutline,
+  ContactPage,
+  LocationOn,
+} from "@mui/icons-material";
 
 interface AboutMetadata {
   description: string;
   email: string;
-  githubLocation: string;
+  location: string;
   githubUsername: string;
   includeResume: boolean;
   instagramUsername: string;
@@ -27,7 +28,7 @@ export default class About extends React.Component {
     description:
       "Software engineer from the Pacific Northwest. My mom's favorite programmer. 👨‍💻 My dog's favorite photographer. 📸🐶",
     email: "contact@xsalazar.com",
-    githubLocation: "Portland, OR",
+    location: "Portland, OR",
     githubUsername: "xsalazar",
     includeResume: false,
     instagramUsername: "xsalazar3",
@@ -41,23 +42,30 @@ export default class About extends React.Component {
     return (
       <Grid container xs={12} sx={{ display: "flex", flexDirection: "column" }}>
         {/* Icon */}
-        <Grid item>
+        <Grid item xs sx={{ pb: 2 }}>
           <Avatar
             src={this.aboutMetadata.profilePictureUrl}
-            sx={{ minWidth: 56, minHeight: 56 }}
+            sx={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              width: 150,
+              height: "auto",
+            }}
           ></Avatar>
         </Grid>
 
         {/* Name */}
-        <Grid item>
+        <Grid item xs>
           <Typography variant="h4" gutterBottom>
             {this.aboutMetadata.name}
           </Typography>
         </Grid>
 
         {/* Bio */}
-        <Grid item>
-          <Typography gutterBottom>{this.aboutMetadata.description}</Typography>
+        <Grid item xs>
+          <Typography variant="body1" sx={{ pb: 2 }} gutterBottom>
+            {this.aboutMetadata.description}
+          </Typography>
         </Grid>
 
         {/* Location */}
@@ -70,9 +78,9 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <LocationIcon size={20}></LocationIcon>
+            <LocationOn />
           </div>
-          <Typography>{this.aboutMetadata.githubLocation}</Typography>
+          <Typography>{this.aboutMetadata.location}</Typography>
         </Grid>
 
         {/* Work Organization */}
@@ -85,7 +93,7 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <OrganizationIcon size={20}></OrganizationIcon>
+            <WorkOutline />
           </div>
           <Typography>
             <Link
@@ -108,7 +116,7 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <MarkGithubIcon size={20}></MarkGithubIcon>
+            <GitHub />
           </div>
           <Typography>
             <Link
@@ -131,7 +139,7 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <LinkedIn style={{ fontSize: "20px" }}></LinkedIn>
+            <LinkedIn />
           </div>
           <Typography>
             <Link
@@ -154,7 +162,7 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <Instagram fontSize="large" sx={{ fontSize: "20px" }}></Instagram>
+            <Instagram />
           </div>
           <Typography>
             <Link
@@ -178,7 +186,7 @@ export default class About extends React.Component {
             }}
           >
             <div style={{ paddingRight: "5px" }}>
-              <FileIcon size={20}></FileIcon>
+              <ContactPage />
             </div>
             <Typography>
               <Link
@@ -204,7 +212,7 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <MailIcon size={20}></MailIcon>
+            <MailOutline />
           </div>
           <Typography>
             <Link href={`mailto:${this.aboutMetadata.email}`}>
