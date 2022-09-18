@@ -3,7 +3,6 @@ import {
   Link,
   Card,
   CardContent,
-  Box,
   Container,
   Typography,
 } from "@mui/material";
@@ -34,59 +33,57 @@ export default class Certifications extends React.Component {
   render(): React.ReactNode {
     return (
       <Container sx={{ pb: 2 }}>
-        <Box>
-          <Typography variant="h5" gutterBottom>
-            My Certifications
-          </Typography>
-          <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
-            Professional certifications I've received.
-          </Typography>
+        <Typography variant="h5" gutterBottom>
+          My Certifications
+        </Typography>
+        <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
+          Professional certifications I've received.
+        </Typography>
 
-          <Grid container spacing={2}>
-            {this.certifications.map((certification) => {
-              return (
-                <Grid item xs={12} sm={6} md={4} key={certification.title}>
-                  <Link
-                    href={certification.certificateUrl}
-                    target="_blank"
-                    rel="noopener"
+        <Grid container spacing={2}>
+          {this.certifications.map((certification) => {
+            return (
+              <Grid item xs={12} sm={6} md={4} key={certification.title}>
+                <Link
+                  href={certification.certificateUrl}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <Card
+                    variant="outlined"
+                    style={{
+                      height: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
                   >
-                    <Card
-                      variant="outlined"
+                    <CardContent
                       style={{
-                        height: "100%",
                         display: "flex",
-                        justifyContent: "center",
+                        flexDirection: "column",
+                        alignItems: "center",
                       }}
                     >
-                      <CardContent
+                      {/* Image */}
+                      <div
                         style={{
                           display: "flex",
-                          flexDirection: "column",
                           alignItems: "center",
                         }}
                       >
-                        {/* Image */}
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                          }}
-                        >
-                          <img
-                            src={certification.logoUrl}
-                            alt={certification.title}
-                            style={{ width: "128px", height: "128x" }}
-                          />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Box>
+                        <img
+                          src={certification.logoUrl}
+                          alt={certification.title}
+                          style={{ width: "128px", height: "128x" }}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </Grid>
+            );
+          })}
+        </Grid>
       </Container>
     );
   }

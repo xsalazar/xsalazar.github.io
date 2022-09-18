@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Container,
-  Box,
   Typography,
   Card,
   CardMedia,
@@ -75,87 +74,85 @@ export default class Projects extends React.Component {
   render(): React.ReactNode {
     return (
       <Container sx={{ pb: 2 }}>
-        <Box>
-          <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
-            Projects I've Published.
-          </Typography>
+        <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
+          Projects I've Published.
+        </Typography>
 
-          <Grid container spacing={2}>
-            {this.projects.map((project) => {
-              return (
-                <Grid item xs={12} sm={6} md={4} key={project.name}>
-                  <Card
-                    variant="outlined"
-                    sx={{
-                      height: "100%",
+        <Grid container spacing={2}>
+          {this.projects.map((project) => {
+            return (
+              <Grid item xs={12} sm={6} md={4} key={project.name}>
+                <Card
+                  variant="outlined"
+                  sx={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  {/* Image */}
+                  <CardMedia
+                    component="img"
+                    height="150"
+                    image={project.thumbnail}
+                  ></CardMedia>
+
+                  {/* Description */}
+                  <CardContent
+                    style={{
                       display: "flex",
                       flexDirection: "column",
+                      flex: 1,
                     }}
                   >
-                    {/* Image */}
-                    <CardMedia
-                      component="img"
-                      height="200"
-                      image={project.thumbnail}
-                    ></CardMedia>
-
-                    {/* Description */}
-                    <CardContent
+                    {/* Title */}
+                    <div
                       style={{
                         display: "flex",
-                        flexDirection: "column",
-                        flex: 1,
+                        alignItems: "center",
+                        paddingBottom: "10px",
                       }}
                     >
-                      {/* Title */}
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          paddingBottom: "10px",
-                        }}
-                      >
-                        <Public style={{ fontSize: "16px" }} />
-                        <Typography variant="subtitle1">
-                          <Link
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener"
-                            style={{ paddingLeft: "5px" }}
-                          >
-                            {project.name}
-                          </Link>
-                        </Typography>
-                      </div>
+                      <Public style={{ fontSize: "16px" }} />
+                      <Typography variant="subtitle1">
+                        <Link
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener"
+                          style={{ paddingLeft: "5px" }}
+                        >
+                          {project.name}
+                        </Link>
+                      </Typography>
+                    </div>
 
-                      {/* Description */}
-                      <div style={{ flex: 1 }}>
-                        <Typography variant="body2" gutterBottom>
-                          {project.description}
-                        </Typography>
-                      </div>
+                    {/* Description */}
+                    <div style={{ flex: 1 }}>
+                      <Typography variant="body2" gutterBottom>
+                        {project.description}
+                      </Typography>
+                    </div>
 
-                      {/* Link */}
-                      <div>
-                        <Typography variant="subtitle1">
-                          <LinkIcon size="small" />
-                          <Link
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener"
-                            style={{ paddingLeft: "5px" }}
-                          >
-                            {project.url}
-                          </Link>
-                        </Typography>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Box>
+                    {/* Link */}
+                    <div>
+                      <Typography variant="subtitle1">
+                        <LinkIcon size="small" />
+                        <Link
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener"
+                          style={{ paddingLeft: "5px" }}
+                        >
+                          {project.url}
+                        </Link>
+                      </Typography>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
       </Container>
     );
   }
