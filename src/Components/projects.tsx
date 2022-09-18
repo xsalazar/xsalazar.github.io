@@ -120,6 +120,7 @@ export default class Projects extends React.Component {
                           target="_blank"
                           rel="noopener"
                           style={{ paddingLeft: "5px" }}
+                          underline="hover"
                         >
                           {project.name}
                         </Link>
