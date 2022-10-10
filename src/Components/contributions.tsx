@@ -81,6 +81,13 @@ export default class Contributions extends React.Component {
       description: "Add security requirements type to root document",
       language: "JavaScript",
     },
+    {
+      owner: "hashicorp",
+      repo: "terraform-provider-aws",
+      pullNumber: 10962,
+      description: "Add LoadBasedAutoscaling to OpsWorks Layer",
+      language: "Go",
+    },
   ];
 
   render(): React.ReactNode {
