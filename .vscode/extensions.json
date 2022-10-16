@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "hediet.vscode-drawio",
-    "streetsidesoftware.code-spell-checker"
-  ]
+  "recommendations": ["hediet.vscode-drawio"]
 }
