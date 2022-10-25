@@ -21,18 +21,25 @@ interface Project {
 export default class Projects extends React.Component {
   private projects: Array<Project> = [
     {
-      name: "Fluent Emoji",
-      description:
-        'Browse Microsoft\'s catalog of "familiar, friendly, and modern" Fluent Emoji, comprehensively available online',
-      url: "https://fluentemoji.com",
-      thumbnail: "https://fluentemoji.com/social.png",
-    },
-    {
       name: "Emoji Mosaic",
       description:
         "Easily convert your favorite images into tiny emoji mosaics to share on Slack",
       url: "https://emojimosaic.dev",
       thumbnail: "https://emojimosaic.dev/social.png",
+    },
+    {
+      name: "Project Template",
+      description:
+        "Template repository used to bootstrap Tyepscript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
+      url: "https://template.xsalazar.com",
+      thumbnail: "https://template.xsalazar.com/social.png",
+    },
+    {
+      name: "Learn Emoji",
+      description:
+        "A simple guessing game for learning the emoji :short_names: on websites such as GitHub, Slack, Discord, and more!",
+      url: "https://learnemoji.dev",
+      thumbnail: "https://learnemoji.dev/social.png",
     },
     {
       name: "Emoji Kitchen",
@@ -42,18 +49,18 @@ export default class Projects extends React.Component {
       thumbnail: "https://emojikitchen.dev/social.png",
     },
     {
+      name: "Fluent Emoji",
+      description:
+        'Browse Microsoft\'s catalog of "familiar, friendly, and modern" Fluent Emoji, comprehensively available online',
+      url: "https://fluentemoji.com",
+      thumbnail: "https://fluentemoji.com/social.png",
+    },
+    {
       name: "Download Emoji",
       description:
         "Download and save copies of your favorite emoji for easy reuse of .jpeg and .png images.",
       url: "https://downloademoji.dev",
       thumbnail: "https://downloademoji.dev/social.png",
-    },
-    {
-      name: "Learn Emoji",
-      description:
-        "A simple guessing game for learning the emoji :short_names: on websites such as GitHub, Slack, Discord, and more!",
-      url: "https://learnemoji.dev",
-      thumbnail: "https://learnemoji.dev/social.png",
     },
     {
       name: "Lyman Art",
@@ -136,7 +143,7 @@ export default class Projects extends React.Component {
 
                     {/* Link */}
                     <div>
-                      <Typography variant="body2">
+                      <Typography variant="caption">
                         <LinkIcon size="small" />
                         <Link
                           href={project.url}

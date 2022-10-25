@@ -88,6 +88,13 @@ export default class Contributions extends React.Component {
       description: "Add LoadBasedAutoscaling to OpsWorks Layer",
       language: "Go",
     },
+    {
+      owner: "microsoft",
+      repo: "fluentui-emoji",
+      pullNumber: 73,
+      description: "Add Prince emoji metadata",
+      language: "JSON",
+    },
   ];
 
   render(): React.ReactNode {
