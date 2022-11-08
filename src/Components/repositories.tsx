@@ -19,22 +19,16 @@ interface RepositoryMetadata {
 export default class Repositories extends React.Component {
   private repositories: Array<RepositoryMetadata> = [
     {
-      name: "emoji-kitchen",
+      name: "emoji-mosaic",
       description:
-        "🧑‍🍳 This repository contains the source code for the website https://emojikitchen.dev and allows for quick and easy browsing of the over 20,000 supported emoji mashups as part of Google's Emoji Kitchen.",
+        "✂️ This repository contains the source code for the website https://emojimosaic.dev allows for taking a source image, slicing it into smaller images that can be uploaded as individual emoji to create mosaics in Slack, Discord, or other messaging platforms.",
       language: "TypeScript",
     },
     {
-      name: "xsalazar.github.io",
+      name: "project-template",
       description:
-        "🍄 This repository holds the source code for my personal website, hosted on GitHub Pages. The website is written in Typescript/React and deployed via GitHub Actions.",
+        "Template repository used to bootstrap Tyepscript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
       language: "TypeScript",
-    },
-    {
-      name: "terraform-aws-docker-deploy",
-      description:
-        "🍳 This repository holds simple boilerplate code to deploy a basic Typescript API application within a Fargate-managed ECS cluster. This repository also leverages GitHub Actions to lay the CI/CD groundwork to automatically deploy application changes to ECR and redeploy the ECS cluster with updates.",
-      language: "HCL",
     },
     {
       name: "learn-emoji",
@@ -43,9 +37,9 @@ export default class Repositories extends React.Component {
       language: "TypeScript",
     },
     {
-      name: "emoji-mosaic",
+      name: "emoji-kitchen",
       description:
-        "✂️ This repository contains the source code for the website https://emojimosaic.dev allows for taking a source image, slicing it into smaller images that can be uploaded as individual emoji to create mosaics in Slack, Discord, or other messaging platforms.",
+        "🧑‍🍳 This repository contains the source code for the website https://emojikitchen.dev and allows for quick and easy browsing of the over 20,000 supported emoji mashups as part of Google's Emoji Kitchen.",
       language: "TypeScript",
     },
     {
@@ -61,16 +55,40 @@ export default class Repositories extends React.Component {
       language: "TypeScript",
     },
     {
-      name: "drawio-twemoji-library",
+      name: "xsalazar.github.io",
       description:
-        "🐦 Twitter Emoji Libraries for use with draw.io and diagrams.net. Works with the VSCode drawio plugin!",
-      language: "JavaScript",
+        "🍄 This repository holds the source code for my personal website, hosted on GitHub Pages. The website is written in Typescript/React and deployed via GitHub Actions.",
+      language: "TypeScript",
     },
     {
       name: "image-downloader",
       description:
         "💿 This repository contains the backend AWS Lambda source code to download Google's Emoji Kitchen images for the front-end website hosted at https://emojikitchen.dev",
       language: "HCL",
+    },
+    {
+      name: "image-slicer",
+      description:
+        " ✂️ This repository contains the backend AWS Lambda source code to slice mosaic images for the front-end website hosted at https://emojimosaic.dev",
+      language: "HCL",
+    },
+    {
+      name: "image-wower",
+      description:
+        'This application code is an "image wowing" service that takes an input image, removes the background, and overlays it on top of a colorful gif. The backend application is used to support the website https://wowemoji.dev',
+      language: "HCL",
+    },
+    {
+      name: "terraform-aws-docker-deploy",
+      description:
+        "🍳 This repository holds simple boilerplate code to deploy a basic Typescript API application within a Fargate-managed ECS cluster. This repository also leverages GitHub Actions to lay the CI/CD groundwork to automatically deploy application changes to ECR and redeploy the ECS cluster with updates.",
+      language: "HCL",
+    },
+    {
+      name: "drawio-twemoji-library",
+      description:
+        "🐦 Twitter Emoji Libraries for use with draw.io and diagrams.net. Works with the VSCode drawio plugin!",
+      language: "JavaScript",
     },
   ];
 

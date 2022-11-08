@@ -56,6 +56,13 @@ export default class Projects extends React.Component {
       thumbnail: "https://fluentemoji.com/social.png",
     },
     {
+      name: "Wow Emoji",
+      description:
+        "This website allows for automated and quick creation of :wow: emoji, frequently and joyfully used at Slack.",
+      url: "https://wowemoji.dev",
+      thumbnail: "https://wowemoji.dev/social.png",
+    },
+    {
       name: "Download Emoji",
       description:
         "Download and save copies of your favorite emoji for easy reuse of .jpeg and .png images.",
