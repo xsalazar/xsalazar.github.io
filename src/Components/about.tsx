@@ -5,10 +5,10 @@ import {
   Instagram,
   GitHub,
   MailOutline,
-  WorkOutline,
   ContactPage,
   LocationOn,
 } from "@mui/icons-material";
+import { OrganizationIcon } from "@primer/octicons-react";
 
 interface AboutMetadata {
   description: string;
@@ -93,7 +93,7 @@ export default class About extends React.Component {
           }}
         >
           <div style={{ paddingRight: "5px" }}>
-            <WorkOutline />
+            <OrganizationIcon size={24} />
           </div>
           <Typography>
             <Link
