@@ -6,7 +6,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.12",
+    "@mui/material": "^5.11.13",
     "@primer/octicons-react": "^18.2.0",
     "eslint-config-react-app": "^7.0.1",
     "linguist-languages": "^7.21.0",
