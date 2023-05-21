@@ -49,6 +49,12 @@ export default class Repositories extends React.Component {
       language: "TypeScript",
     },
     {
+      name: "wow-emoji",
+      description:
+        '🌈 This repository contains the website source code for https://wowemoji.dev. This website allows for automated and quick creation of :wow: emoji, frequently and joyfully used at Slack. These emoji are used to celebrate and uplift coworkers that make you say "wow".',
+      language: "TypeScript",
+    },
+    {
       name: "download-emoji",
       description:
         "💾 This repository contains the website source code for https://downloademoji.dev. This website allows users to quickly download large high-quality versions of their favorite emojis in .png or .jpeg formats!",
@@ -59,6 +65,12 @@ export default class Repositories extends React.Component {
       description:
         "🍄 This repository holds the source code for my personal website, hosted on GitHub Pages. The website is written in Typescript/React and deployed via GitHub Actions.",
       language: "TypeScript",
+    },
+    {
+      name: "xsalazar",
+      description:
+        "✨ Special repo that adds a README.md on my public GitHub profile. Fully automated ocean generator.",
+      language: "JavaScript",
     },
     {
       name: "image-downloader",
@@ -75,7 +87,7 @@ export default class Repositories extends React.Component {
     {
       name: "image-wower",
       description:
-        'This application code is an "image wowing" service that takes an input image, removes the background, and overlays it on top of a colorful gif. The backend application is used to support the website https://wowemoji.dev',
+        '🌈 This application code is an "image wowing" service that takes an input image, removes the background, and overlays it on top of a colorful gif. The backend application is used to support the website https://wowemoji.dev',
       language: "HCL",
     },
     {
