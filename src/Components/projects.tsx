@@ -30,7 +30,7 @@ export default class Projects extends React.Component {
     {
       name: "Project Template",
       description:
-        "Template repository used to bootstrap Tyepscript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
+        "Template repository used to bootstrap Typescript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
       url: "https://template.xsalazar.com",
       thumbnail: "https://template.xsalazar.com/social.png",
     },
@@ -70,6 +70,12 @@ export default class Projects extends React.Component {
       thumbnail: "https://downloademoji.dev/social.png",
     },
     {
+      name: "Photography Portfolio",
+      description: "Personal portfolio of my film and digital photography",
+      url: "https://portfolio.xsalazar.com",
+      thumbnail: "https://portfolio.xsalazar.com/social.png",
+    },
+    {
       name: "Lyman Art",
       description:
         "Andrew Lyman original artwork, created as a static Jekyll website with image optimization",
@@ -88,8 +94,11 @@ export default class Projects extends React.Component {
   render(): React.ReactNode {
     return (
       <Container sx={{ pb: 2 }}>
+        <Typography variant="h5" gutterBottom>
+          My Projects
+        </Typography>
         <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
-          Projects I've Published.
+          Websites I've Published.
         </Typography>
 
         <Grid container spacing={2}>

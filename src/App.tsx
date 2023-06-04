@@ -22,8 +22,8 @@ export default function App() {
           {/* Right-Side Content */}
           <Grid item xs={12} sm={9}>
             <Container maxWidth="md">
-              <Repositories />
               <Projects />
+              <Repositories />
               <Contributions />
               <Certifications />
             </Container>

@@ -61,6 +61,18 @@ export default class Repositories extends React.Component {
       language: "TypeScript",
     },
     {
+      name: "portfolio",
+      description:
+        "📸 This repository contains the source code for the website https://portfolio.xsalazar.com and showcases my personal film and digital photography.",
+      language: "TypeScript",
+    },
+    {
+      name: "portfolio-backend",
+      description:
+        "📸 This repository holds both the Terraform infrastructure code as well as the simple Javascript application that runs inside the AWS Lambda function.",
+      language: "HCL",
+    },
+    {
       name: "xsalazar.github.io",
       description:
         "🍄 This repository holds the source code for my personal website, hosted on GitHub Pages. The website is written in Typescript/React and deployed via GitHub Actions.",
@@ -107,9 +119,6 @@ export default class Repositories extends React.Component {
   render(): React.ReactNode {
     return (
       <Container sx={{ pb: 2 }}>
-        <Typography variant="h5" gutterBottom>
-          My Projects
-        </Typography>
         <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
           GitHub repositories I've built.
         </Typography>
