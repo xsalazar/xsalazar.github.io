@@ -31,7 +31,7 @@ export default class About extends React.Component {
     location: "Portland, OR",
     githubUsername: "xsalazar",
     includeResume: false,
-    instagramUsername: "xsalazar3",
+    instagramUsername: "_xsalazar",
     linkedInUsername: "xsalazar",
     name: "Xavier Salazar",
     organization: "Slack",
