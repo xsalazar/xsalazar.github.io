@@ -1,6 +1,6 @@
 # 🍄 Personal website
 
-This repository contains the source code for the website [https://xsalazar.com](https://xsalazar.com) and was bootstrapped using [`create-react-app`](https://github.com/facebook/create-react-app).
+This repository contains the source code for the website [https://xsalazar.com](https://xsalazar.com).
 
 ## Getting Started
 

@@ -8,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import { RepoIcon, DotFillIcon } from "@primer/octicons-react";
-import LinguistLanguages from "linguist-languages";
 
 interface RepositoryMetadata {
   name: string;
@@ -27,7 +26,7 @@ export default class Repositories extends React.Component {
     {
       name: "project-template",
       description:
-        "Template repository used to bootstrap Tyepscript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
+        "Template repository used to bootstrap Typescript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
       language: "TypeScript",
     },
     {
@@ -187,15 +186,20 @@ export default class Repositories extends React.Component {
     );
   }
 
-  private languagesToColors: Map<string, LinguistLanguages.Language> = new Map(
-    Object.entries(LinguistLanguages)
-  );
-
   getColorForLanguage(language: string): string {
-    if (this.languagesToColors.has(language)) {
-      return this.languagesToColors.get(language)?.color ?? "#aaaaaa";
-    } else {
-      return "#aaaaaa";
+    switch (language) {
+      case "TypeScript":
+        return "#3178c6";
+      case "HCL":
+        return "#844FBA";
+      case "JavaScript":
+        return "#f1e05a";
+      case "Go":
+        return "#00ADD8";
+      case "JSON":
+        return "#292929";
+      default:
+        return "#aaaaaa";
     }
   }
 }
