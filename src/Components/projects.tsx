@@ -24,75 +24,75 @@ export default class Projects extends React.Component {
       name: "Emoji Mosaic",
       description:
         "Easily convert your favorite images into tiny emoji mosaics to share on Slack",
-      url: "https://emojimosaic.dev",
+      url: "emojimosaic.dev",
       thumbnail: "https://emojimosaic.dev/social.png",
     },
     {
       name: "Project Template",
       description:
         "Template repository used to bootstrap Typescript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
-      url: "https://template.xsalazar.com",
+      url: "template.xsalazar.com",
       thumbnail: "https://template.xsalazar.com/social.png",
     },
     {
       name: "Rhine Street Public Library",
       description: "Local book drop showcasing available and checked out books",
-      url: "https://rhinestreetpubliclibrary.com",
+      url: "rhinestreetpubliclibrary.com",
       thumbnail: "https://rhinestreetpubliclibrary.com/social.png",
     },
     {
       name: "Learn Emoji",
       description:
         "A simple guessing game for learning the emoji :short_names: on websites such as GitHub, Slack, Discord, and more!",
-      url: "https://learnemoji.dev",
+      url: "learnemoji.dev",
       thumbnail: "https://learnemoji.dev/social.png",
     },
     {
       name: "Emoji Kitchen",
       description:
         "Easily browse and save over 30,000 unique emoji mashups, prepared fresh from Google's kitchen!",
-      url: "https://emojikitchen.dev",
+      url: "emojikitchen.dev",
       thumbnail: "https://emojikitchen.dev/social.png",
     },
     {
       name: "Fluent Emoji",
       description:
         'Browse Microsoft\'s catalog of "familiar, friendly, and modern" Fluent Emoji, comprehensively available online',
-      url: "https://fluentemoji.com",
+      url: "fluentemoji.com",
       thumbnail: "https://fluentemoji.com/social.png",
     },
     {
       name: "Wow Emoji",
       description:
         "This website allows for automated and quick creation of :wow: emoji, frequently and joyfully used at Slack.",
-      url: "https://wowemoji.dev",
+      url: "wowemoji.dev",
       thumbnail: "https://wowemoji.dev/social.png",
     },
     {
       name: "Download Emoji",
       description:
         "Download and save copies of your favorite emoji for easy reuse of .jpeg and .png images.",
-      url: "https://downloademoji.dev",
+      url: "downloademoji.dev",
       thumbnail: "https://downloademoji.dev/social.png",
     },
     {
       name: "Photography Portfolio",
       description: "Personal portfolio of my film and digital photography",
-      url: "https://portfolio.xsalazar.com",
+      url: "portfolio.xsalazar.com",
       thumbnail: "https://portfolio.xsalazar.com/social.png",
     },
     {
       name: "Lyman Art",
       description:
         "Andrew Lyman original artwork, created as a static Jekyll website with image optimization",
-      url: "https://ablyman.com",
+      url: "ablyman.com",
       thumbnail: "https://ablyman.com/images/social.png",
     },
     {
       name: "Personal Website",
       description:
         "A website for showcasing my programming portfolio, including a number of projects, open source contributions, and contact information",
-      url: "https://xsalazar.com",
+      url: "xsalazar.com",
       thumbnail: "https://xsalazar.com/social.png",
     },
   ];
@@ -168,7 +168,7 @@ export default class Projects extends React.Component {
                       <Typography variant="caption">
                         <LinkIcon size="small" />
                         <Link
-                          href={project.url}
+                          href={`https://${project.url}`}
                           target="_blank"
                           rel="noopener"
                           style={{ paddingLeft: "5px" }}
