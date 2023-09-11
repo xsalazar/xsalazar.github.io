@@ -30,6 +30,18 @@ export default class Repositories extends React.Component {
       language: "TypeScript",
     },
     {
+      name: "rhine-street-public-library",
+      description:
+        "📚 This repository contains the source code for the website https://rhinestreetpubliclibrary.com. This website allows for viewing available and checked out books from the library.",
+      language: "TypeScript",
+    },
+    {
+      name: "rhine-street-public-library-backend",
+      description:
+        "📚 This repository holds both the Terraform infrastructure code as well as the simple Javascript application that runs inside the AWS Lambda function.",
+      language: "HCL",
+    },
+    {
       name: "learn-emoji",
       description:
         "📚 This repository contains the website source code for https://learnemoji.dev. This website is aimed at creating a simple guessing game for learning the emoji :short_names: on websites such as GitHub, Slack, Discord, and more!",

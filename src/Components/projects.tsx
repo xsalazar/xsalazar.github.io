@@ -35,6 +35,12 @@ export default class Projects extends React.Component {
       thumbnail: "https://template.xsalazar.com/social.png",
     },
     {
+      name: "Rhine Street Public Library",
+      description: "Local book drop showcasing available and checked out books",
+      url: "https://rhinestreetpubliclibrary.com",
+      thumbnail: "https://rhinestreetpubliclibrary.com/social.png",
+    },
+    {
       name: "Learn Emoji",
       description:
         "A simple guessing game for learning the emoji :short_names: on websites such as GitHub, Slack, Discord, and more!",
