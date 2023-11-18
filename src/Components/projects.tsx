@@ -145,7 +145,7 @@ export default class Projects extends React.Component {
                       <Public style={{ fontSize: "16px" }} />
                       <Typography variant="body2">
                         <Link
-                          href={project.url}
+                          href={`https://${project.url}`}
                           target="_blank"
                           rel="noopener"
                           style={{ paddingLeft: "5px" }}
