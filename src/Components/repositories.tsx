@@ -50,7 +50,7 @@ export default class Repositories extends React.Component {
     {
       name: "emoji-kitchen",
       description:
-        "🧑‍🍳 This repository contains the source code for the website https://emojikitchen.dev and allows for quick and easy browsing of the over 30,000 supported emoji mashups as part of Google's Emoji Kitchen.",
+        "🧑‍🍳 This repository contains the source code for the website https://emojikitchen.dev and allows for quick and easy browsing of the over 50,000 supported emoji mashups as part of Google's Emoji Kitchen.",
       language: "TypeScript",
     },
     {

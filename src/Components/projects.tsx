@@ -50,7 +50,7 @@ export default class Projects extends React.Component {
     {
       name: "Emoji Kitchen",
       description:
-        "Easily browse and save over 30,000 unique emoji mashups, prepared fresh from Google's kitchen!",
+        "Easily browse and save over 50,000 unique emoji mashups, prepared fresh from Google's kitchen!",
       url: "emojikitchen.dev",
       thumbnail: "https://emojikitchen.dev/social.png",
     },
