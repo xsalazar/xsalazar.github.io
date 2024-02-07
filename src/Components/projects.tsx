@@ -81,13 +81,13 @@ export default class Projects extends React.Component {
       url: "portfolio.xsalazar.com",
       thumbnail: "https://portfolio.xsalazar.com/social.png",
     },
-    {
-      name: "Lyman Art",
-      description:
-        "Andrew Lyman original artwork, created as a static Jekyll website with image optimization",
-      url: "ablyman.com",
-      thumbnail: "https://ablyman.com/images/social.png",
-    },
+    // {
+    //   name: "Lyman Art",
+    //   description:
+    //     "Andrew Lyman original artwork, created as a static Jekyll website with image optimization",
+    //   url: "ablyman.com",
+    //   thumbnail: "https://ablyman.com/images/social.png",
+    // },
     {
       name: "Personal Website",
       description:
