@@ -1,5 +1,5 @@
-import { Grid } from "@mui/material";
-import { Container } from "@mui/material";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid2";
 import About from "./Components/about";
 import Certifications from "./Components/certifications";
 import Contributions from "./Components/contributions";
@@ -13,14 +13,14 @@ export default function App() {
       <Container maxWidth="lg" sx={{ pt: 2 }}>
         <Grid container>
           {/* Left-Side About */}
-          <Grid item xs={12} sm={3} sx={{ pb: 2 }}>
+          <Grid size={{ xs: 12, sm: 3 }} sx={{ pb: 2 }}>
             <Container>
               <About />
             </Container>
           </Grid>
 
           {/* Right-Side Content */}
-          <Grid item xs={12} sm={9}>
+          <Grid size={{ xs: 12, sm: 9 }}>
             <Container maxWidth="md">
               <Projects />
               <Repositories />

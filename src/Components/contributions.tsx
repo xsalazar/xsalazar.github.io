@@ -1,24 +1,21 @@
-import React from "react";
-import {
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Link,
-} from "@mui/material";
-import { GitMergeIcon, DotFillIcon } from "@primer/octicons-react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid2";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import { DotFillIcon, GitMergeIcon } from "@primer/octicons-react";
 
-interface ContributionMetadata {
+type ContributionMetadata = {
   owner: string;
   repo: string;
   pullNumber: number;
   description: string;
   language: string;
-}
+};
 
-export default class Contributions extends React.Component {
-  private contributionMetadata: Array<ContributionMetadata> = [
+export default function Contributions() {
+  const contributionMetadata: Array<ContributionMetadata> = [
     {
       owner: "hashicorp",
       repo: "terraform-provider-aws",
@@ -96,85 +93,79 @@ export default class Contributions extends React.Component {
     },
   ];
 
-  render(): React.ReactNode {
-    return (
-      <Container sx={{ pb: 2 }}>
-        <Typography variant="h5" gutterBottom>
-          My Contributions
-        </Typography>
-        <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
-          Open source contributions I've made.
-        </Typography>
-        <Grid container spacing={2}>
-          {this.contributionMetadata.map((contribution) => {
-            return (
-              <Grid item xs={12} sm={6} md={4} key={contribution.pullNumber}>
-                <Card
-                  variant="outlined"
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                  }}
-                >
-                  <CardContent
-                    sx={{ display: "flex", flexDirection: "column" }}
+  return (
+    <Container sx={{ pb: 2 }}>
+      <Typography variant="h5" gutterBottom>
+        My Contributions
+      </Typography>
+      <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
+        Open source contributions I've made.
+      </Typography>
+      <Grid container spacing={2}>
+        {contributionMetadata.map((contribution) => {
+          return (
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={contribution.pullNumber}>
+              <Card
+                variant="outlined"
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                }}
+              >
+                <CardContent sx={{ display: "flex", flexDirection: "column" }}>
+                  {/* Title */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      paddingBottom: "15px",
+                    }}
                   >
-                    {/* Title */}
-                    <div
+                    <div style={{ paddingRight: "5px" }}>
+                      <GitMergeIcon size="small" />
+                    </div>
+                    <Typography variant="body2">
+                      <Link
+                        href={`https://github.com/${contribution.owner}/${contribution.repo}/pull/${contribution.pullNumber}`}
+                        target="_blank"
+                        rel="noopener"
+                        underline="hover"
+                      >
+                        {contribution.repo}
+                      </Link>
+                    </Typography>
+                  </div>
+
+                  {/* Description */}
+                  <div style={{ flex: 1 }}>
+                    <Typography variant="body2" gutterBottom>
+                      {contribution.description}
+                    </Typography>
+                  </div>
+
+                  {/* Language */}
+                  <div>
+                    <span
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        paddingBottom: "15px",
+                        color: getColorForLanguage(contribution.language),
                       }}
                     >
-                      <div style={{ paddingRight: "5px" }}>
-                        <GitMergeIcon size="small" />
-                      </div>
-                      <Typography variant="body2">
-                        <Link
-                          href={`https://github.com/${contribution.owner}/${contribution.repo}/pull/${contribution.pullNumber}`}
-                          target="_blank"
-                          rel="noopener"
-                          underline="hover"
-                        >
-                          {contribution.repo}
-                        </Link>
-                      </Typography>
-                    </div>
+                      <DotFillIcon size="small" />
+                    </span>
+                    <Typography variant="caption">
+                      {contribution.language}
+                    </Typography>
+                  </div>
+                </CardContent>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Container>
+  );
 
-                    {/* Description */}
-                    <div style={{ flex: 1 }}>
-                      <Typography variant="body2" gutterBottom>
-                        {contribution.description}
-                      </Typography>
-                    </div>
-
-                    {/* Language */}
-                    <div>
-                      <span
-                        style={{
-                          color: this.getColorForLanguage(
-                            contribution.language
-                          ),
-                        }}
-                      >
-                        <DotFillIcon size="small" />
-                      </span>
-                      <Typography variant="caption">
-                        {contribution.language}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-    );
-  }
-
-  getColorForLanguage(language: string): string {
+  function getColorForLanguage(language: string): string {
     switch (language) {
       case "TypeScript":
         return "#3178c6";

@@ -1,25 +1,23 @@
-import React from "react";
-import {
-  Container,
-  Typography,
-  Card,
-  CardMedia,
-  Grid,
-  CardContent,
-  Link,
-} from "@mui/material";
 import { Public } from "@mui/icons-material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid2";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+
 import { LinkIcon } from "@primer/octicons-react";
 
-interface Project {
+type Project = {
   name: string;
   description: string;
   url: string;
   thumbnail: string;
-}
+};
 
-export default class Projects extends React.Component {
-  private projects: Array<Project> = [
+export default function Projects() {
+  const projects: Array<Project> = [
     {
       name: "Emoji Mosaic",
       description:
@@ -97,93 +95,91 @@ export default class Projects extends React.Component {
     },
   ];
 
-  render(): React.ReactNode {
-    return (
-      <Container sx={{ pb: 2 }}>
-        <Typography variant="h5" gutterBottom>
-          My Projects
-        </Typography>
-        <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
-          Websites I've Published.
-        </Typography>
+  return (
+    <Container sx={{ pb: 2 }}>
+      <Typography variant="h5" gutterBottom>
+        My Projects
+      </Typography>
+      <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
+        Websites I've Published.
+      </Typography>
 
-        <Grid container spacing={2}>
-          {this.projects.map((project) => {
-            return (
-              <Grid item xs={12} sm={6} md={4} key={project.name}>
-                <Card
-                  variant="outlined"
-                  sx={{
-                    height: "100%",
+      <Grid container spacing={2}>
+        {projects.map((project) => {
+          return (
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={project.name}>
+              <Card
+                variant="outlined"
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {/* Image */}
+                <CardMedia
+                  component="img"
+                  height="150"
+                  image={project.thumbnail}
+                ></CardMedia>
+
+                {/* Description */}
+                <CardContent
+                  style={{
                     display: "flex",
                     flexDirection: "column",
+                    flex: 1,
                   }}
                 >
-                  {/* Image */}
-                  <CardMedia
-                    component="img"
-                    height="150"
-                    image={project.thumbnail}
-                  ></CardMedia>
-
-                  {/* Description */}
-                  <CardContent
+                  {/* Title */}
+                  <div
                     style={{
                       display: "flex",
-                      flexDirection: "column",
-                      flex: 1,
+                      alignItems: "center",
+                      paddingBottom: "15px",
                     }}
                   >
-                    {/* Title */}
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        paddingBottom: "15px",
-                      }}
-                    >
-                      <Public style={{ fontSize: "16px" }} />
-                      <Typography variant="body2">
-                        <Link
-                          href={`https://${project.url}`}
-                          target="_blank"
-                          rel="noopener"
-                          style={{ paddingLeft: "5px" }}
-                          underline="hover"
-                        >
-                          {project.name}
-                        </Link>
-                      </Typography>
-                    </div>
+                    <Public style={{ fontSize: "16px" }} />
+                    <Typography variant="body2">
+                      <Link
+                        href={`https://${project.url}`}
+                        target="_blank"
+                        rel="noopener"
+                        style={{ paddingLeft: "5px" }}
+                        underline="hover"
+                      >
+                        {project.name}
+                      </Link>
+                    </Typography>
+                  </div>
 
-                    {/* Description */}
-                    <div style={{ flex: 1 }}>
-                      <Typography variant="body2" gutterBottom>
-                        {project.description}
-                      </Typography>
-                    </div>
+                  {/* Description */}
+                  <div style={{ flex: 1 }}>
+                    <Typography variant="body2" gutterBottom>
+                      {project.description}
+                    </Typography>
+                  </div>
 
-                    {/* Link */}
-                    <div>
-                      <Typography variant="caption">
-                        <LinkIcon size="small" />
-                        <Link
-                          href={`https://${project.url}`}
-                          target="_blank"
-                          rel="noopener"
-                          style={{ paddingLeft: "5px" }}
-                        >
-                          {project.url}
-                        </Link>
-                      </Typography>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-    );
-  }
+                  {/* Link */}
+                  <div>
+                    <Typography variant="caption">
+                      <LinkIcon size="small" />
+                      <Link
+                        href={`https://${project.url}`}
+                        target="_blank"
+                        rel="noopener"
+                        style={{ paddingLeft: "5px" }}
+                      >
+                        {project.url}
+                      </Link>
+                    </Typography>
+                  </div>
+                </CardContent>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Container>
+  );
 }

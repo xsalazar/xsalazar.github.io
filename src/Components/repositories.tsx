@@ -1,22 +1,19 @@
-import React from "react";
-import {
-  Card,
-  CardContent,
-  Container,
-  Grid,
-  Link,
-  Typography,
-} from "@mui/material";
-import { RepoIcon, DotFillIcon } from "@primer/octicons-react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid2";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import { DotFillIcon, RepoIcon } from "@primer/octicons-react";
 
-interface RepositoryMetadata {
+type RepositoryMetadata = {
   name: string;
   description: string;
   language: string;
-}
+};
 
-export default class Repositories extends React.Component {
-  private repositories: Array<RepositoryMetadata> = [
+export default function Repositories() {
+  const repositories: Array<RepositoryMetadata> = [
     {
       name: "emoji-mosaic",
       description:
@@ -127,78 +124,71 @@ export default class Repositories extends React.Component {
     },
   ];
 
-  render(): React.ReactNode {
-    return (
-      <Container sx={{ pb: 2 }}>
-        <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
-          GitHub repositories I've built.
-        </Typography>
+  return (
+    <Container sx={{ pb: 2 }}>
+      <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
+        GitHub repositories I've built.
+      </Typography>
 
-        <Grid container spacing={2}>
-          {this.repositories.map((repository) => {
-            return (
-              <Grid item xs={12} md={4} key={repository.name}>
-                <Card
-                  variant="outlined"
-                  sx={{ height: "100%", display: "flex" }}
-                >
-                  <CardContent
-                    sx={{ display: "flex", flexDirection: "column" }}
+      <Grid container spacing={2}>
+        {repositories.map((repository) => {
+          return (
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={repository.name}>
+              <Card variant="outlined" sx={{ height: "100%", display: "flex" }}>
+                <CardContent sx={{ display: "flex", flexDirection: "column" }}>
+                  {/* Title */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      paddingBottom: "15px",
+                    }}
                   >
-                    {/* Title */}
-                    <div
+                    <div style={{ paddingRight: "5px" }}>
+                      <RepoIcon size="small" />
+                    </div>
+                    <Typography variant="body2">
+                      <Link
+                        href={`https://github.com/xsalazar/${repository.name}`}
+                        target="_blank"
+                        rel="noopener"
+                        underline="hover"
+                      >
+                        {repository.name}
+                      </Link>
+                    </Typography>
+                  </div>
+
+                  {/* Description */}
+                  <div style={{ flex: 1 }}>
+                    <Typography variant="body2" gutterBottom>
+                      {repository.description}
+                    </Typography>
+                  </div>
+
+                  {/* Language */}
+                  <div>
+                    <span
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        paddingBottom: "15px",
+                        color: getColorForLanguage(repository.language),
                       }}
                     >
-                      <div style={{ paddingRight: "5px" }}>
-                        <RepoIcon size="small" />
-                      </div>
-                      <Typography variant="body2">
-                        <Link
-                          href={`https://github.com/xsalazar/${repository.name}`}
-                          target="_blank"
-                          rel="noopener"
-                          underline="hover"
-                        >
-                          {repository.name}
-                        </Link>
-                      </Typography>
-                    </div>
+                      <DotFillIcon size="small" />
+                    </span>
+                    <Typography variant="caption">
+                      {repository.language}
+                    </Typography>
+                  </div>
+                </CardContent>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Container>
+  );
 
-                    {/* Description */}
-                    <div style={{ flex: 1 }}>
-                      <Typography variant="body2" gutterBottom>
-                        {repository.description}
-                      </Typography>
-                    </div>
-
-                    {/* Language */}
-                    <div>
-                      <span
-                        style={{
-                          color: this.getColorForLanguage(repository.language),
-                        }}
-                      >
-                        <DotFillIcon size="small" />
-                      </span>
-                      <Typography variant="caption">
-                        {repository.language}
-                      </Typography>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-    );
-  }
-
-  getColorForLanguage(language: string): string {
+  function getColorForLanguage(language: string): string {
     switch (language) {
       case "TypeScript":
         return "#3178c6";
