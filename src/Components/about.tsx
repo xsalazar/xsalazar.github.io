@@ -48,7 +48,7 @@ export default function About() {
       {/* Top level picture, name, bio container */}
       <Grid container>
         {/* Icon */}
-        <Grid sx={{ pb: 2 }}>
+        <Grid size={{ xs: 6, sm: 12 }} sx={{ pb: 2, pr: 2 }}>
           <Avatar
             src={aboutMetadata.profilePictureUrl}
             sx={{
