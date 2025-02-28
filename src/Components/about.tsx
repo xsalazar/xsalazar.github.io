@@ -1,7 +1,6 @@
 import {
   ContactPage,
   GitHub,
-  Instagram,
   LinkedIn,
   LocationOn,
   MailOutline,
@@ -20,7 +19,6 @@ type AboutMetadata = {
   location: string;
   githubUsername: string;
   includeResume: boolean;
-  instagramUsername: string;
   linkedInUsername: string;
   name: string;
   organization: string;
@@ -36,7 +34,6 @@ export default function About() {
     location: "Portland, OR",
     githubUsername: "xsalazar",
     includeResume: false,
-    instagramUsername: "_xsalazar",
     linkedInUsername: "xsalazar",
     name: "Xavier Salazar",
     organization: "Slack",
@@ -176,29 +173,6 @@ export default function About() {
               rel="noopener"
             >
               LinkedIn
-            </Link>
-          </Typography>
-        </Grid>
-
-        {/* Instagram Link */}
-        <Grid
-          size={{ xs: 4, sm: 12 }}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            paddingBottom: "10px",
-          }}
-        >
-          <div style={{ paddingRight: "5px" }}>
-            <Instagram sx={{ display: "block", margin: "auto" }} />
-          </div>
-          <Typography>
-            <Link
-              href={`https://www.instagram.com/${aboutMetadata.instagramUsername}`}
-              target="_blank"
-              rel="noopener"
-            >
-              Instagram
             </Link>
           </Typography>
         </Grid>
