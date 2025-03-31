@@ -7,7 +7,7 @@ import {
 } from "@mui/icons-material";
 import { SvgIcon } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { OrganizationIcon } from "@primer/octicons-react";
