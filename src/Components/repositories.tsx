@@ -21,6 +21,12 @@ export default function Repositories() {
       language: "TypeScript",
     },
     {
+      name: "emoji-mosaic-backend",
+      description:
+        " ✂️ This repository contains the backend AWS Lambda source code to slice mosaic images for the front-end website hosted at https://emojimosaic.dev",
+      language: "HCL",
+    },
+    {
       name: "project-template",
       description:
         "Template repository used to bootstrap Typescript React projects with GitHub Actions CI/CD and VSCode devcontainer support",
@@ -32,12 +38,12 @@ export default function Repositories() {
         "📚 This repository contains the source code for the website https://rhinestreetpubliclibrary.com. This website allows for viewing available and checked out books from the library.",
       language: "TypeScript",
     },
-    {
-      name: "rhine-street-public-library-backend",
-      description:
-        "📚 This repository holds both the Terraform infrastructure code as well as the simple Javascript application that runs inside the AWS Lambda function.",
-      language: "HCL",
-    },
+    // {
+    //   name: "rhine-street-public-library-backend",
+    //   description:
+    //     "📚 This repository holds both the Terraform infrastructure code as well as the simple Javascript application that runs inside the AWS Lambda function.",
+    //   language: "HCL",
+    // },
     {
       name: "learn-emoji",
       description:
@@ -49,6 +55,12 @@ export default function Repositories() {
       description:
         "🧑‍🍳 This repository contains the source code for the website https://emojikitchen.dev and allows for quick and easy browsing of the over 100,000 supported emoji mashups as part of Google's Emoji Kitchen.",
       language: "TypeScript",
+    },
+    {
+      name: "emoji-kitchen-backend",
+      description:
+        "🧑‍🍳 This repository contains the backend AWS Lambda source code to support search for the front-end website hosted at https://emojikitchen.dev",
+      language: "HCL",
     },
     {
       name: "fluent-emoji",
@@ -63,10 +75,22 @@ export default function Repositories() {
       language: "TypeScript",
     },
     {
+      name: "image-wower",
+      description:
+        '🌈 This application code is an "image wowing" service that takes an input image, removes the background, and overlays it on top of a colorful gif. The backend application is used to support the website https://wowemoji.dev',
+      language: "HCL",
+    },
+    {
       name: "download-emoji",
       description:
         "💾 This repository contains the website source code for https://downloademoji.dev. This website allows users to quickly download large high-quality versions of their favorite emojis in .png or .jpeg formats!",
       language: "TypeScript",
+    },
+    {
+      name: "download-emoji-backend",
+      description:
+        "💾 This repository contains the backend AWS Lambda source code to convert .svg images into .png or .jpeg images for the front-end website hosted at https://downloademoji.dev",
+      language: "HCL",
     },
     {
       name: "portfolio",
@@ -81,6 +105,18 @@ export default function Repositories() {
       language: "HCL",
     },
     {
+      name: "are-the-elevators-broken",
+      description:
+        "🛗 A basic community-report system for pedestrian infrastructure here in Portland, OR.",
+      language: "TypeScript",
+    },
+    {
+      name: "are-the-elevators-broken-backend",
+      description:
+        "🛗 This backend application is used to support the website https://aretheelevatorsbroken.com for a basic community-report system for pedestrian infrastructure here in Portland, OR.",
+      language: "HCL",
+    },
+    {
       name: "xsalazar.github.io",
       description:
         "🍄 This repository holds the source code for my personal website, hosted on GitHub Pages. The website is written in Typescript/React and deployed via GitHub Actions.",
@@ -91,24 +127,6 @@ export default function Repositories() {
       description:
         "✨ Special repo that adds a README.md on my public GitHub profile. Fully automated ocean generator.",
       language: "JavaScript",
-    },
-    {
-      name: "image-downloader",
-      description:
-        "💿 This repository contains the backend AWS Lambda source code to download Google's Emoji Kitchen images for the front-end website hosted at https://emojikitchen.dev",
-      language: "HCL",
-    },
-    {
-      name: "image-slicer",
-      description:
-        " ✂️ This repository contains the backend AWS Lambda source code to slice mosaic images for the front-end website hosted at https://emojimosaic.dev",
-      language: "HCL",
-    },
-    {
-      name: "image-wower",
-      description:
-        '🌈 This application code is an "image wowing" service that takes an input image, removes the background, and overlays it on top of a colorful gif. The backend application is used to support the website https://wowemoji.dev',
-      language: "HCL",
     },
     {
       name: "terraform-aws-docker-deploy",
