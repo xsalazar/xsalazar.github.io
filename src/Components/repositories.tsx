@@ -75,7 +75,7 @@ export default function Repositories() {
       language: "TypeScript",
     },
     {
-      name: "image-wower",
+      name: "wow-emoji-backend",
       description:
         '🌈 This application code is an "image wowing" service that takes an input image, removes the background, and overlays it on top of a colorful gif. The backend application is used to support the website https://wowemoji.dev',
       language: "HCL",
