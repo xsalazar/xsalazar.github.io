@@ -5,12 +5,13 @@ import {
   LocationOn,
   MailOutline,
 } from "@mui/icons-material";
-import { SvgIcon } from "@mui/material";
+import { Fade, SvgIcon } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { OrganizationIcon } from "@primer/octicons-react";
+import { useRef, useState } from "react";
 
 type AboutMetadata = {
   bskyUsername: string;
@@ -29,7 +30,7 @@ export default function About() {
   const aboutMetadata: AboutMetadata = {
     bskyUsername: "xsalazar",
     description:
-      "Software engineer from the Pacific Northwest. My mom's favorite programmer. 👨‍💻 My dog's favorite photographer. 📸🐶",
+      "Software engineer from the Pacific Northwest, trying to figure out how to get there by bike.",
     email: "contact@xsalazar.com",
     location: "Portland, OR",
     githubUsername: "xsalazar",
@@ -40,22 +41,85 @@ export default function About() {
     profilePictureUrl: "https://avatars.githubusercontent.com/u/14851080?v=4",
   };
 
+  const [showHeart, setShowHeart] = useState(false);
+  const [clickDisabled, setClickDisabled] = useState(false);
+  const [heart, setHeart] = useState("2764_fe0f");
+  const heartTimerRef = useRef(0);
+
+  const startTimer = () => {
+    setClickDisabled(true);
+    setHeart(getRandomHeart());
+    setShowHeart(true);
+    heartTimerRef.current = setInterval(() => {
+      stopTimer();
+    }, 1500);
+  };
+
+  const stopTimer = () => {
+    setShowHeart(false);
+    clearInterval(heartTimerRef.current);
+    heartTimerRef.current = 0;
+  };
+
+  const getRandomHeart = (): string => {
+    const hearts = [
+      "2764_fe0f",
+      "1f9e1",
+      "1f49b",
+      "1f49a",
+      "1fa75",
+      "1f499",
+      "1f49c",
+      "1f90e",
+      "1f5a4",
+      "1fa76",
+      "1f90d",
+      "1fa77",
+    ];
+
+    return hearts[Math.floor(Math.random() * hearts.length)];
+  };
+
   return (
     <Grid container>
       {/* Top level picture, name, bio container */}
       <Grid container>
         {/* Icon */}
         <Grid size={{ xs: 6, sm: 12 }} sx={{ pb: 2, pr: 2 }}>
-          <Avatar
-            src={aboutMetadata.profilePictureUrl}
-            sx={{
-              maxWidth: "100%",
-              maxHeight: "100%",
-              width: 150,
-              height: "auto",
-              marginRight: "16px",
-            }}
-          ></Avatar>
+          <div
+            style={{ position: "relative", height: 150 }}
+            onClick={() => !clickDisabled && startTimer()}
+          >
+            <Avatar
+              src={aboutMetadata.profilePictureUrl}
+              sx={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                width: 150,
+                height: "auto",
+                marginRight: "16px",
+                position: "absolute",
+                zIndex: "-1",
+              }}
+            ></Avatar>
+            <Fade
+              in={showHeart}
+              timeout={500}
+              onExited={() => setClickDisabled(false)}
+            >
+              <Avatar
+                variant="square"
+                src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${heart}/512.gif`}
+                slotProps={{ img: { style: { padding: "32px" } } }}
+                sx={{
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  width: 150,
+                  height: "auto",
+                }}
+              />
+            </Fade>
+          </div>
         </Grid>
 
         <Grid container size={{ xs: 6, sm: 12 }}>
@@ -68,7 +132,7 @@ export default function About() {
 
           {/* Bio */}
           <Grid>
-            <Typography variant="body1" sx={{ pb: 2 }} gutterBottom>
+            <Typography variant="body2" sx={{ pb: 2 }} gutterBottom>
               {aboutMetadata.description}
             </Typography>
           </Grid>
