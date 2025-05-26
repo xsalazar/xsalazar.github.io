@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { OrganizationIcon } from "@primer/octicons-react";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 type AboutMetadata = {
   bskyUsername: string;
@@ -46,7 +46,8 @@ export default function About() {
   const [heart, setHeart] = useState("2764_fe0f");
   const heartTimerRef = useRef(0);
 
-  const startTimer = () => {
+  const startTimer = (e: React.MouseEvent) => {
+    e.preventDefault();
     setClickDisabled(true);
     setHeart(getRandomHeart());
     setShowHeart(true);
@@ -88,7 +89,7 @@ export default function About() {
         <Grid size={{ xs: 6, sm: 12 }} sx={{ pb: 2, pr: 2 }}>
           <div
             style={{ position: "relative", height: 150 }}
-            onClick={() => !clickDisabled && startTimer()}
+            onClick={(e) => !clickDisabled && startTimer(e)}
           >
             <Avatar
               src={aboutMetadata.profilePictureUrl}
@@ -107,14 +108,13 @@ export default function About() {
               timeout={500}
               onExited={() => setClickDisabled(false)}
             >
-              <Avatar
-                variant="square"
+              <img
                 src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${heart}/512.gif`}
-                slotProps={{ img: { style: { padding: "48px" } } }}
-                sx={{
+                style={{
                   maxWidth: "100%",
                   maxHeight: "100%",
-                  width: 150,
+                  width: 100,
+                  padding: 25,
                   height: "auto",
                 }}
               />
