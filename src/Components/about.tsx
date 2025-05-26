@@ -110,7 +110,7 @@ export default function About() {
               <Avatar
                 variant="square"
                 src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${heart}/512.gif`}
-                slotProps={{ img: { style: { padding: "32px" } } }}
+                slotProps={{ img: { style: { padding: "48px" } } }}
                 sx={{
                   maxWidth: "100%",
                   maxHeight: "100%",
