@@ -10,7 +10,6 @@ import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { OrganizationIcon } from "@primer/octicons-react";
 import React, { useRef, useState } from "react";
 
 type AboutMetadata = {
@@ -37,7 +36,7 @@ export default function About() {
     includeResume: false,
     linkedInUsername: "xsalazar",
     name: "Xavier Salazar",
-    organization: "Slack",
+    organization: "",
     profilePictureUrl: "https://avatars.githubusercontent.com/u/14851080?v=4",
   };
 
@@ -161,7 +160,7 @@ export default function About() {
         </Grid>
 
         {/* Work Organization */}
-        <Grid
+        {/* <Grid
           container
           size={{ xs: 6, sm: 12 }}
           sx={{
@@ -185,7 +184,7 @@ export default function About() {
               {aboutMetadata.organization}
             </Link>
           </Typography>
-        </Grid>
+        </Grid> */}
       </Grid>
 
       {/* Social links container */}
