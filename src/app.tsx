@@ -21,7 +21,7 @@ export default function App() {
 
           {/* Right-Side Content */}
           <Grid size={{ sm: 12, md: 9 }}>
-            <Container maxWidth="md">
+            <Container sx={{ padding: "0px" }}>
               <Projects />
               <Repositories />
               <Contributions />

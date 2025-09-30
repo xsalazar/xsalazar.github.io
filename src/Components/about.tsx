@@ -40,44 +40,23 @@ export default function About() {
     profilePictureUrl: "https://avatars.githubusercontent.com/u/14851080?v=4",
   };
 
-  const [showHeart, setShowHeart] = useState(false);
+  const [showSparkles, setShowSparkles] = useState(false);
   const [clickDisabled, setClickDisabled] = useState(false);
-  const [heart, setHeart] = useState("2764_fe0f");
-  const heartTimerRef = useRef(0);
+  const sparkleTimerRef = useRef(0);
 
   const startTimer = (e: React.MouseEvent) => {
     e.preventDefault();
     setClickDisabled(true);
-    setHeart(getRandomHeart());
-    setShowHeart(true);
-    heartTimerRef.current = setInterval(() => {
+    setShowSparkles(true);
+    sparkleTimerRef.current = setInterval(() => {
       stopTimer();
     }, 1500);
   };
 
   const stopTimer = () => {
-    setShowHeart(false);
-    clearInterval(heartTimerRef.current);
-    heartTimerRef.current = 0;
-  };
-
-  const getRandomHeart = (): string => {
-    const hearts = [
-      "2764_fe0f",
-      "1f9e1",
-      "1f49b",
-      "1f49a",
-      "1fa75",
-      "1f499",
-      "1f49c",
-      "1f90e",
-      "1f5a4",
-      "1fa76",
-      "1f90d",
-      "1fa77",
-    ];
-
-    return hearts[Math.floor(Math.random() * hearts.length)];
+    setShowSparkles(false);
+    clearInterval(sparkleTimerRef.current);
+    sparkleTimerRef.current = 0;
   };
 
   return (
@@ -103,12 +82,12 @@ export default function About() {
               }}
             ></Avatar>
             <Fade
-              in={showHeart}
+              in={showSparkles}
               timeout={500}
               onExited={() => setClickDisabled(false)}
             >
               <img
-                src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${heart}/512.gif`}
+                src={`https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.gif`}
                 style={{
                   maxWidth: "100%",
                   maxHeight: "100%",
@@ -139,14 +118,13 @@ export default function About() {
       </Grid>
 
       {/* Location and employee container */}
-      <Grid container>
+      <Grid container size={{ xs: 6, sm: 12 }}>
         {/* Location */}
         <Grid
           container
-          size={{ xs: 6, sm: 12 }}
+          size={12}
           sx={{
             display: "flex",
-            alignItems: "center",
             paddingBottom: "10px",
           }}
         >
@@ -158,45 +136,18 @@ export default function About() {
           </div>
           <Typography>{aboutMetadata.location}</Typography>
         </Grid>
-
-        {/* Work Organization */}
-        {/* <Grid
-          container
-          size={{ xs: 6, sm: 12 }}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            paddingBottom: "10px",
-          }}
-        >
-          <Grid size={12}>
-            <Typography variant="caption">Where I work:</Typography>
-          </Grid>
-          <div style={{ paddingRight: "5px" }}>
-            <OrganizationIcon size={24} verticalAlign="middle" />
-          </div>
-          <Typography>
-            <Link
-              href="https://github.com/slackhq"
-              target="_blank"
-              rel="noopener"
-            >
-              {aboutMetadata.organization}
-            </Link>
-          </Typography>
-        </Grid> */}
       </Grid>
 
-      {/* Social links container */}
-      <Grid container>
-        {/* Socials */}
+      {/* Contact links container */}
+      <Grid container size={{ xs: 6, sm: 12 }}>
+        {/* Contacts */}
         <Grid size={12}>
-          <Typography variant="caption">Socials:</Typography>
+          <Typography variant="caption">Contact:</Typography>
         </Grid>
 
         {/* GitHub Link */}
         <Grid
-          size={{ xs: 4, sm: 12 }}
+          size={{ xs: 6, sm: 12 }}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -219,7 +170,7 @@ export default function About() {
 
         {/* LinkedIn Link */}
         <Grid
-          size={{ xs: 4, sm: 12 }}
+          size={{ xs: 6, sm: 12 }}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -242,7 +193,7 @@ export default function About() {
 
         {/* Bsky Link */}
         <Grid
-          size={{ xs: 4, sm: 12 }}
+          size={{ xs: 6, sm: 12 }}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -300,7 +251,7 @@ export default function About() {
 
         {/* Mail Link */}
         <Grid
-          size={{ xs: 4, sm: 12 }}
+          size={{ xs: 6, sm: 12 }}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -311,9 +262,7 @@ export default function About() {
             <MailOutline sx={{ display: "block", margin: "auto" }} />
           </div>
           <Typography>
-            <Link href={`mailto:${aboutMetadata.email}`}>
-              {aboutMetadata.email}
-            </Link>
+            <Link href={`mailto:${aboutMetadata.email}`}>Email</Link>
           </Typography>
         </Grid>
       </Grid>
