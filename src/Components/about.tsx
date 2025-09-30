@@ -118,7 +118,7 @@ export default function About() {
       </Grid>
 
       {/* Location and employee container */}
-      <Grid container size={{ xs: 6, sm: 12 }}>
+      <Grid container size={{ xs: 5, sm: 12 }}>
         {/* Location */}
         <Grid
           container
@@ -139,7 +139,7 @@ export default function About() {
       </Grid>
 
       {/* Contact links container */}
-      <Grid container size={{ xs: 6, sm: 12 }}>
+      <Grid container size={{ xs: 7, sm: 12 }}>
         {/* Contacts */}
         <Grid size={12}>
           <Typography variant="caption">Contact:</Typography>
