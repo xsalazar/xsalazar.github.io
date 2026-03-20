@@ -1,10 +1,10 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import About from "./Components/about";
-import Certifications from "./Components/certifications";
-import Contributions from "./Components/contributions";
-import Projects from "./Components/projects";
-import Repositories from "./Components/repositories";
+import About from "./Components/about.js";
+import Certifications from "./Components/certifications.js";
+import Contributions from "./Components/contributions.js";
+import Projects from "./Components/projects.js";
+import Repositories from "./Components/repositories.js";
 
 export default function App() {
   return (

@@ -8,7 +8,7 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { DotFillIcon } from "@primer/octicons-react";
-import { getColorForLanguage } from "./utils";
+import { getColorForLanguage } from "./utils.js";
 
 type RepositoryMetadata = {
   name: string;
@@ -118,7 +118,7 @@ export default function Repositories() {
                         <span
                           style={{
                             color: getColorForLanguage(
-                              repository.frontend.language
+                              repository.frontend.language,
                             ),
                           }}
                         >
@@ -152,7 +152,7 @@ export default function Repositories() {
                         <span
                           style={{
                             color: getColorForLanguage(
-                              repository.backend.language
+                              repository.backend.language,
                             ),
                           }}
                         >

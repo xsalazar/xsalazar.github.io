@@ -9,7 +9,7 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { DotFillIcon } from "@primer/octicons-react";
-import { getColorForLanguage } from "./utils";
+import { getColorForLanguage } from "./utils.js";
 
 type Project = {
   name: string;
@@ -269,7 +269,7 @@ export default function Projects() {
                             <span
                               style={{
                                 color: getColorForLanguage(
-                                  project.frontend.language
+                                  project.frontend.language,
                                 ),
                               }}
                             >
@@ -303,7 +303,7 @@ export default function Projects() {
                             <span
                               style={{
                                 color: getColorForLanguage(
-                                  project.backend.language
+                                  project.backend.language,
                                 ),
                               }}
                             >
