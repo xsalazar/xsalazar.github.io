@@ -181,7 +181,6 @@ export default function Projects() {
       <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
         Websites I've Published.
       </Typography>
-
       <Grid container spacing={2}>
         {projects.map((project) => {
           return (
@@ -221,7 +220,9 @@ export default function Projects() {
                   </Typography>
 
                   {/* Description */}
-                  <Typography variant="caption" mb={2}>
+                  <Typography variant="caption" sx={{
+                    mb: 2
+                  }}>
                     {project.description}
                   </Typography>
 
@@ -249,12 +250,16 @@ export default function Projects() {
                     {/* Repo Information */}
                     <Grid container>
                       {project.frontend && (
-                        <Stack direction="row" spacing={1} width="100%">
+                        <Stack direction="row" spacing={1} sx={{
+                          width: "100%"
+                        }}>
                           {/* Code Icon */}
                           <Code fontSize="small" />
 
                           {/* Repo Name */}
-                          <Typography variant="caption" flexGrow={1}>
+                          <Typography variant="caption" sx={{
+                            flexGrow: 1
+                          }}>
                             <Link
                               href={`https://github.com/xsalazar/${project.frontend.name}`}
                               target="_blank"
@@ -283,12 +288,16 @@ export default function Projects() {
                       )}
 
                       {project.backend && (
-                        <Stack direction="row" spacing={1} width="100%">
+                        <Stack direction="row" spacing={1} sx={{
+                          width: "100%"
+                        }}>
                           {/* Code Icon */}
                           <Code fontSize="small" />
 
                           {/* Repo Name */}
-                          <Typography variant="caption" flexGrow={1}>
+                          <Typography variant="caption" sx={{
+                            flexGrow: 1
+                          }}>
                             <Link
                               href={`https://github.com/xsalazar/${project.backend.name}`}
                               target="_blank"

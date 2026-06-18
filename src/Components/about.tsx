@@ -4,7 +4,7 @@ import {
   GitHub,
   LinkedIn,
   LocationOn,
-  MailOutline,
+  MailOutlined,
 } from "@mui/icons-material";
 import { Fade, Stack, SvgIcon } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
@@ -291,7 +291,7 @@ export default function About() {
           }}
         >
           <Stack direction="row" spacing={1}>
-            <MailOutline
+            <MailOutlined
               fontSize="small"
               sx={{ display: "block", margin: "auto" }}
             />
