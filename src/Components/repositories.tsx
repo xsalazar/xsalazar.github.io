@@ -68,7 +68,6 @@ export default function Repositories() {
       <Typography variant="body1" color="textSecondary" sx={{ pb: "15px" }}>
         GitHub repositories I've built.
       </Typography>
-
       <Grid container spacing={2}>
         {repositories.map((repository) => {
           return (
@@ -103,7 +102,9 @@ export default function Repositories() {
                       <Code fontSize="small" />
 
                       {/* Repo Name */}
-                      <Typography variant="caption" flexGrow={1}>
+                      <Typography variant="caption" sx={{
+                        flexGrow: 1
+                      }}>
                         <Link
                           href={`https://github.com/xsalazar/${repository.frontend.name}`}
                           target="_blank"
@@ -137,7 +138,9 @@ export default function Repositories() {
                       <Code fontSize="small" />
 
                       {/* Repo Name */}
-                      <Typography variant="caption" flexGrow={1}>
+                      <Typography variant="caption" sx={{
+                        flexGrow: 1
+                      }}>
                         <Link
                           href={`https://github.com/xsalazar/${repository.backend.name}`}
                           target="_blank"

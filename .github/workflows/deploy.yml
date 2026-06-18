@@ -22,19 +22,19 @@ jobs:
           persist-credentials: false
 
       - name: Download Resume 📜
-        uses: xsalazar/actions/downloader@master
+        uses: xsalazar/actions/downloader@main
         with:
           url: ${{ secrets.RESUME_URL }}
           filename: "public/resume.pdf"
 
       - name: Download Terraform Certification 💾
-        uses: xsalazar/actions/downloader@master
+        uses: xsalazar/actions/downloader@main
         with:
           url: ${{ secrets.TERRAFORM_CERTIFICATION_URL }}
           filename: "public/terraform-cert.pdf"
 
       - name: Download AWS Certification 💾
-        uses: xsalazar/actions/downloader@master
+        uses: xsalazar/actions/downloader@main
         with:
           url: ${{ secrets.AWS_CERTIFICATION_URL }}
           filename: "public/aws-cert.pdf"
